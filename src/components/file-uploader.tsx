@@ -65,14 +65,6 @@ interface FileUploaderProps
    * @example maxFiles={5}
    */
   maxFiles?: DropzoneProps["maxFiles"]
-
-  /**
-   * Whether the uploader is currently uploading files.
-   * @type boolean
-   * @default false
-   * @example isUploading={false}
-   */
-  isUploading?: boolean
 }
 
 export function FileUploader({
@@ -83,7 +75,6 @@ export function FileUploader({
   multiple,
   maxSize = 1024 * 1024 * 4,
   maxFiles = 1,
-  isUploading = false,
   disabled = false,
   className,
   ...props
@@ -177,14 +168,7 @@ export function FileUploader({
             )}
           >
             <input {...getInputProps()} {...props} />
-            {isUploading ? (
-              <div className="group grid w-full place-items-center gap-1 sm:px-10">
-                <UploadIcon
-                  className="size-9 animate-pulse text-muted-foreground"
-                  aria-hidden="true"
-                />
-              </div>
-            ) : isDragActive ? (
+            {isDragActive ? (
               <div className="flex flex-col items-center justify-center gap-4 sm:px-5">
                 <div className="rounded-full border border-dashed p-3">
                   <UploadIcon
@@ -211,7 +195,7 @@ export function FileUploader({
                   <p className="text-sm text-muted-foreground/70">
                     You can upload
                     {maxFiles > 1
-                      ? ` ${maxFiles === Infinity ? "unlimited" : maxFiles}
+                      ? ` ${maxFiles === Infinity ? "multiple" : maxFiles}
                       files (up to ${formatBytes(maxSize)} each)`
                       : ` a file with ${formatBytes(maxSize)}`}
                   </p>
