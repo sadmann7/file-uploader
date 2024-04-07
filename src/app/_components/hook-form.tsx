@@ -111,7 +111,7 @@ export function HookForm() {
                   <div className="flex w-max space-x-2.5 py-4">
                     {uploadedFiles.map((file) => (
                       <div
-                        key={file.id}
+                        key={file.key}
                         className="relative aspect-square size-20 overflow-hidden rounded-lg"
                       >
                         <Image
