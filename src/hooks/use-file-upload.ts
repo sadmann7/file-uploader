@@ -19,9 +19,8 @@ export function useFileUpload(
   endpoint: keyof OurFileRouter,
   { defaultUploadedFiles = [], ...props }: UseFileUploadProps = {}
 ) {
-  const [uploadedFiles, setUploadedFiles] = React.useState<
-    UploadedFile[] | null
-  >(defaultUploadedFiles)
+  const [uploadedFiles, setUploadedFiles] =
+    React.useState<UploadedFile[]>(defaultUploadedFiles)
   const [progresses, setProgresses] = React.useState<Record<string, number>>({})
   const [isUploading, setIsUploading] = React.useState(false)
 

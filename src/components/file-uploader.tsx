@@ -12,7 +12,6 @@ import { toast } from "sonner"
 
 import { cn, formatBytes } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 import { Progress } from "./ui/progress"
@@ -21,11 +20,11 @@ interface FileUploaderProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "accept"> {
   /**
    * Function to be called when the value changes.
-   * @type React.Dispatch<React.SetStateAction<FileWithPreview[] | null>>
+   * @type React.Dispatch<React.SetStateAction<FileWithPreview[]>>
    * @default undefined
    * @example onValueChange={(files) => setFiles(files)}
    */
-  onValueChange?: React.Dispatch<React.SetStateAction<FileWithPreview[] | null>>
+  onValueChange?: React.Dispatch<React.SetStateAction<FileWithPreview[]>>
 
   /**
    * Function to be called when files are uploaded.
@@ -82,14 +81,14 @@ export function FileUploader({
   progresses,
   accept = { "image/*": [] },
   multiple,
-  maxSize = 1024 * 1024 * 2,
+  maxSize = 1024 * 1024 * 4,
   maxFiles = 1,
   isUploading = false,
   disabled = false,
   className,
   ...props
 }: FileUploaderProps) {
-  const [files, setFiles] = React.useState<FileWithPreview[] | null>(null)
+  const [files, setFiles] = React.useState<FileWithPreview[]>([])
 
   const onDrop = React.useCallback(
     (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
@@ -126,8 +125,8 @@ export function FileUploader({
         toast.promise(onUpload(updatedFiles), {
           loading: `Uploading ${target}...`,
           success: () => {
-            setFiles(null)
-            onValueChange?.(null)
+            setFiles([])
+            onValueChange?.([])
             return `${target} uploaded`
           },
           error: `Failed to upload ${target}`,
@@ -157,7 +156,7 @@ export function FileUploader({
   const isDisabled = disabled || (files?.length ?? 0) >= maxFiles
 
   return (
-    <Card className="relative flex flex-col gap-6 overflow-hidden p-6">
+    <div className="relative flex flex-col gap-6 overflow-hidden">
       <Dropzone
         onDrop={onDrop}
         accept={accept}
@@ -170,7 +169,7 @@ export function FileUploader({
           <div
             {...getRootProps()}
             className={cn(
-              "group relative grid h-48 w-full cursor-pointer place-items-center rounded-lg border-2 border-dashed border-muted-foreground/25 px-5 py-2.5 text-center transition hover:bg-muted/25",
+              "group relative grid h-52 w-full cursor-pointer place-items-center rounded-lg border-2 border-dashed border-muted-foreground/25 px-5 py-2.5 text-center transition hover:bg-muted/25",
               "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
               isDragActive && "border-muted-foreground/50",
               isDisabled && "pointer-events-none opacity-60",
@@ -223,8 +222,8 @@ export function FileUploader({
         )}
       </Dropzone>
       {files?.length ? (
-        <ScrollArea className="h-full px-4">
-          <div className="max-h-48 space-y-4 ">
+        <ScrollArea className="h-fit w-full px-3">
+          <div className="max-h-48 space-y-4">
             {files?.map((file) => (
               <FileCard
                 key={file.id}
@@ -236,7 +235,7 @@ export function FileUploader({
           </div>
         </ScrollArea>
       ) : null}
-    </Card>
+    </div>
   )
 }
 

@@ -11,8 +11,6 @@ export function BasicUploaderDemo() {
     { defaultUploadedFiles: [] }
   )
 
-  console.log({ uploadedFiles })
-
   return (
     <div className="space-y-6">
       <FileUploader
@@ -22,7 +20,7 @@ export function BasicUploaderDemo() {
         onUpload={uploadFiles}
         disabled={isUploading}
       />
-      <UploadedFilesCard uploadedFiles={uploadedFiles ?? []} />
+      <UploadedFilesCard uploadedFiles={uploadedFiles} />
     </div>
   )
 }

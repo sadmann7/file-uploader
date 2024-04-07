@@ -70,6 +70,8 @@ export function ReactHookFormDemo() {
                     maxFiles={4}
                     maxSize={4 * 1024 * 1024}
                     progresses={progresses}
+                    // pass the onUpload function here for direct upload
+                    // onUpload={uploadFiles}
                     disabled={isUploading}
                   />
                 </FormControl>
@@ -78,9 +80,9 @@ export function ReactHookFormDemo() {
                 </FormDescription>
                 <FormMessage />
               </FormItem>
-              {(uploadedFiles?.length ?? 0) > 0 && (
-                <UploadedFilesCard uploadedFiles={uploadedFiles ?? []} />
-              )}
+              {uploadedFiles.length > 0 ? (
+                <UploadedFilesCard uploadedFiles={uploadedFiles} />
+              ) : null}
             </div>
           )}
         />

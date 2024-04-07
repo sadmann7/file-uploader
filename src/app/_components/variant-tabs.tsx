@@ -1,17 +1,7 @@
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { BasicUploaderDemo } from "./basic-uploader-demo"
+import { DialogUploaderDemo } from "./dialog-uploader-demo"
 import { ReactHookFormDemo } from "./react-hook-form-demo"
 
 export function VariantTabs() {
@@ -20,9 +10,7 @@ export function VariantTabs() {
       <TabsList>
         <TabsTrigger value="basic">Basic</TabsTrigger>
         <TabsTrigger value="hook">React hook form</TabsTrigger>
-        <TabsTrigger value="action" disabled>
-          Server action
-        </TabsTrigger>
+        <TabsTrigger value="dialog">Dialog</TabsTrigger>
       </TabsList>
       <TabsContent value="basic" className="mt-6">
         <BasicUploaderDemo />
@@ -30,29 +18,8 @@ export function VariantTabs() {
       <TabsContent value="hook" className="mt-6">
         <ReactHookFormDemo />
       </TabsContent>
-      <TabsContent value="action" className="mt-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you&apos;ll be logged
-              out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
+      <TabsContent value="dialog" className="mt-6">
+        <DialogUploaderDemo />
       </TabsContent>
     </Tabs>
   )
