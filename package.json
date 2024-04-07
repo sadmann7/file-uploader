@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "rimraf node_modules && rm -rf .next",
+    "clean": "rimraf --glob **/node_modules **/dist **/.next pnpm-lock.yaml **/.tsbuildinfo",
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
