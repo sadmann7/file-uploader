@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
+import { Progress } from "./ui/progress"
+
 interface FileUploaderProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "accept"> {
   /**
@@ -32,6 +34,14 @@ interface FileUploaderProps
    * @example onUpload={(files) => uploadFiles(files)}
    */
   onUpload?: (files: File[]) => Promise<void>
+
+  /**
+   * Progress of the uploaded files.
+   * @type Record<string, number> | undefined
+   * @default undefined
+   * @example progresses={{ "file1.png": 50 }}
+   */
+  progresses?: Record<string, number>
 
   /**
    * Accepted file types for the uploader.
@@ -69,6 +79,7 @@ interface FileUploaderProps
 export function FileUploader({
   onValueChange,
   onUpload,
+  progresses,
   accept = { "image/*": [] },
   multiple,
   maxSize = 1024 * 1024 * 2,
@@ -105,24 +116,18 @@ export function FileUploader({
         })
       }
 
-      console.log({ files })
+      if (
+        onUpload &&
+        updatedFiles.length > 0 &&
+        updatedFiles.length <= maxFiles
+      ) {
+        const target = updatedFiles.length > 0 ? "Files" : "File"
 
-      if (onUpload) {
-        if (
-          !files ||
-          files.length === 0 ||
-          files.length + acceptedFiles.length > maxFiles
-        )
-          return
-
-        const target = files.length > 0 ? "files" : "file"
-
-        toast.promise(onUpload(acceptedFiles), {
+        toast.promise(onUpload(updatedFiles), {
           loading: `Uploading ${target}...`,
           success: () => {
             setFiles(null)
             onValueChange?.(null)
-
             return `${target} uploaded`
           },
           error: `Failed to upload ${target}`,
@@ -149,6 +154,8 @@ export function FileUploader({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const isDisabled = disabled || (files?.length ?? 0) >= maxFiles
+
   return (
     <Card className="relative flex flex-col gap-6 overflow-hidden p-6">
       <Dropzone
@@ -157,7 +164,7 @@ export function FileUploader({
         maxSize={maxSize}
         maxFiles={maxFiles}
         multiple={maxFiles > 1 || multiple}
-        disabled={disabled || (files?.length ?? 0) >= maxFiles}
+        disabled={isDisabled}
       >
         {({ getRootProps, getInputProps, isDragActive }) => (
           <div
@@ -166,9 +173,7 @@ export function FileUploader({
               "group relative grid h-48 w-full cursor-pointer place-items-center rounded-lg border-2 border-dashed border-muted-foreground/25 px-5 py-2.5 text-center transition hover:bg-muted/25",
               "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
               isDragActive && "border-muted-foreground/50",
-              disabled ||
-                ((files?.length ?? 0) >= maxFiles &&
-                  "pointer-events-none opacity-60"),
+              isDisabled && "pointer-events-none opacity-60",
               className
             )}
           >
@@ -225,6 +230,7 @@ export function FileUploader({
                 key={file.id}
                 file={file}
                 onRemove={() => onRemove(file)}
+                progress={progresses?.[file.name]}
               />
             ))}
           </div>
@@ -237,9 +243,10 @@ export function FileUploader({
 interface FileCardProps {
   file: FileWithPreview
   onRemove: () => void
+  progress?: number
 }
 
-function FileCard({ file, onRemove }: FileCardProps) {
+function FileCard({ file, progress, onRemove }: FileCardProps) {
   return (
     <div className="relative flex items-center space-x-4">
       <div className="flex flex-1 space-x-4">
@@ -251,13 +258,16 @@ function FileCard({ file, onRemove }: FileCardProps) {
           loading="lazy"
           className="size-12 shrink-0 rounded-md object-cover"
         />
-        <div className="flex flex-col">
-          <p className="line-clamp-1 text-sm font-medium text-foreground/80">
-            {file.name.slice(0, 45)}.{file.type.split("/")[1]}
-          </p>
-          <p className="text-xs text-muted-foreground">
-            {(file.size / 1024 / 1024).toFixed(2)}MB
-          </p>
+        <div className="flex w-full flex-col gap-2">
+          <div className="space-y-px">
+            <p className="line-clamp-1 text-sm font-medium text-foreground/80">
+              {file.name.slice(0, 45)}.{file.type.split("/")[1]}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {(file.size / 1024 / 1024).toFixed(2)}MB
+            </p>
+          </div>
+          {progress ? <Progress value={progress} /> : null}
         </div>
       </div>
       <div className="flex items-center gap-2">

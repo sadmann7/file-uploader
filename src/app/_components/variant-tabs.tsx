@@ -16,21 +16,23 @@ import { HookForm } from "./hook-form"
 
 export function VariantTabs() {
   return (
-    <Tabs defaultValue="basic" className="w-full">
+    <Tabs defaultValue="basic" className="w-full overflow-hidden">
       <TabsList>
         <TabsTrigger value="basic">Basic</TabsTrigger>
-        <TabsTrigger value="hook">React hook form</TabsTrigger>
+        <TabsTrigger value="hook" disabled>
+          React hook form
+        </TabsTrigger>
         <TabsTrigger value="action" disabled>
           Server action
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="basic">
+      <TabsContent value="basic" className="mt-6">
         <BasicUploaderDemo />
       </TabsContent>
-      <TabsContent value="hook">
+      <TabsContent value="hook" className="mt-6">
         <HookForm />
       </TabsContent>
-      <TabsContent value="action">
+      <TabsContent value="action" className="mt-6">
         <Card>
           <CardHeader>
             <CardTitle>Password</CardTitle>
