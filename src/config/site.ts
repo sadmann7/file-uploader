@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "File Uploader",
+  name: "Uploader",
   description: "A file uploader built with shadcn-ui and react-dropzone",
   url:
     process.env.NODE_ENV === "development"

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { GitHubLogoIcon, VercelLogoIcon } from "@radix-ui/react-icons"
+import { FileIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
 
 import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
@@ -10,12 +10,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <Link href="/" className="mr-2 flex items-center md:mr-6 md:space-x-2">
-          <VercelLogoIcon className="size-4" aria-hidden="true" />
+          <FileIcon className="size-4" aria-hidden="true" />
           <span className="hidden font-bold md:inline-block">
             {siteConfig.name}
           </span>
         </Link>
-        <nav className="flex w-full items-center gap-6 text-sm">
+        {/* <nav className="flex w-full items-center gap-6 text-sm">
           <Link
             href="https://www.sadmn.com/blog/shadcn-table"
             target="_blank"
@@ -24,7 +24,7 @@ export function SiteHeader() {
           >
             Docs
           </Link>
-        </nav>
+        </nav> */}
         <nav className="flex flex-1 items-center md:justify-end">
           <Button variant="ghost" size="icon" className="size-8" asChild>
             <Link

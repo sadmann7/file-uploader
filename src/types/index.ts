@@ -5,5 +5,6 @@ export interface FileWithPreview extends File {
 
 export interface UploadedFile {
   id: string
+  name: string
   url: string
 }

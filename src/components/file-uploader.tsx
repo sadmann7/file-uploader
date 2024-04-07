@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import Image from "next/image"
 import type { FileWithPreview } from "@/types"
@@ -92,16 +94,18 @@ export function FileUploader({
         })
       )
 
-      setFiles((prevFiles) =>
-        prevFiles ? [...prevFiles, ...newFiles] : newFiles
-      )
-      onValueChange?.(files ? [...files, ...newFiles] : newFiles)
+      const updatedFiles = files ? [...files, ...newFiles] : newFiles
+
+      setFiles(updatedFiles)
+      onValueChange?.(updatedFiles)
 
       if (rejectedFiles.length > 0) {
         rejectedFiles.forEach(({ file }) => {
           toast.error(`File ${file.name} was rejected`)
         })
       }
+
+      console.log({ files })
 
       if (onUpload) {
         if (
