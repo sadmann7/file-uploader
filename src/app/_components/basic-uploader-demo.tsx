@@ -14,6 +14,7 @@ export function BasicUploaderDemo() {
   return (
     <div className="space-y-6">
       <FileUploader
+        maxFiles={4}
         maxSize={4 * 1024 * 1024}
         progresses={progresses}
         onUpload={uploadFiles}
