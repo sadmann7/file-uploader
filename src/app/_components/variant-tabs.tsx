@@ -12,16 +12,14 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { BasicUploaderDemo } from "./basic-uploader-demo"
-import { HookForm } from "./hook-form"
+import { ReactHookFormDemo } from "./react-hook-form-demo"
 
 export function VariantTabs() {
   return (
     <Tabs defaultValue="basic" className="w-full overflow-hidden">
       <TabsList>
         <TabsTrigger value="basic">Basic</TabsTrigger>
-        <TabsTrigger value="hook" disabled>
-          React hook form
-        </TabsTrigger>
+        <TabsTrigger value="hook">React hook form</TabsTrigger>
         <TabsTrigger value="action" disabled>
           Server action
         </TabsTrigger>
@@ -30,7 +28,7 @@ export function VariantTabs() {
         <BasicUploaderDemo />
       </TabsContent>
       <TabsContent value="hook" className="mt-6">
-        <HookForm />
+        <ReactHookFormDemo />
       </TabsContent>
       <TabsContent value="action" className="mt-6">
         <Card>
