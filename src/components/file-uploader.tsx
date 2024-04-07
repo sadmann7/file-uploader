@@ -72,9 +72,9 @@ export function FileUploader({
   onUpload,
   progresses,
   accept = { "image/*": [] },
-  multiple,
   maxSize = 1024 * 1024 * 4,
   maxFiles = 1,
+  multiple = false,
   disabled = false,
   className,
   ...props
@@ -83,7 +83,12 @@ export function FileUploader({
 
   const onDrop = React.useCallback(
     (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
-      if (files && files.length + acceptedFiles.length > maxFiles) {
+      if (!multiple || (maxFiles === 1 && rejectedFiles.length > 1)) {
+        toast.error("Cannot upload more than 1 file at a time")
+        return
+      }
+
+      if (files.length + acceptedFiles.length > maxFiles) {
         toast.error(`Cannot upload more than ${maxFiles} files`)
         return
       }
@@ -125,7 +130,7 @@ export function FileUploader({
       }
     },
 
-    [files, maxFiles, onUpload, onValueChange]
+    [files, maxFiles, multiple, onUpload, onValueChange]
   )
 
   function onRemove(file: FileWithPreview) {
