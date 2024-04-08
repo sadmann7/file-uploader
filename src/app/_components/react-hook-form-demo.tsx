@@ -72,6 +72,7 @@ export function ReactHookFormDemo() {
                 <FormLabel>Images</FormLabel>
                 <FormControl>
                   <FileUploader
+                    value={field.value}
                     onValueChange={field.onChange}
                     maxFiles={4}
                     maxSize={4 * 1024 * 1024}
