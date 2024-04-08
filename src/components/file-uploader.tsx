@@ -4,6 +4,7 @@ import * as React from "react"
 import Image from "next/image"
 import type { FileWithPreview } from "@/types"
 import { Cross2Icon, UploadIcon } from "@radix-ui/react-icons"
+import { useControllableState } from "@radix-ui/react-use-controllable-state"
 import Dropzone, {
   type DropzoneProps,
   type FileRejection,
@@ -12,19 +13,18 @@ import { toast } from "sonner"
 
 import { cn, formatBytes } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
 import { ScrollArea } from "@/components/ui/scroll-area"
-
-import { Progress } from "./ui/progress"
 
 interface FileUploaderProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "accept"> {
   /**
    * Function to be called when the value changes.
-   * @type React.Dispatch<React.SetStateAction<FileWithPreview[]>>
+   * @type React.Dispatch<React.SetStateAction<File[]>>
    * @default undefined
    * @example onValueChange={(files) => setFiles(files)}
    */
-  onValueChange?: React.Dispatch<React.SetStateAction<FileWithPreview[]>>
+  onValueChange?: React.Dispatch<React.SetStateAction<File[]>>
 
   /**
    * Function to be called when files are uploaded.
@@ -79,11 +79,17 @@ export function FileUploader({
   className,
   ...props
 }: FileUploaderProps) {
+  // const [files, setFiles] = useControllableState({
+  //   prop: [],
+  //   defaultProp: [],
+  //   onChange: onValueChange,
+  // })
+
   const [files, setFiles] = React.useState<FileWithPreview[]>([])
 
   const onDrop = React.useCallback(
     (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
-      if (!multiple || (maxFiles === 1 && rejectedFiles.length > 1)) {
+      if (!multiple && maxFiles === 1 && acceptedFiles.length > 1) {
         toast.error("Cannot upload more than 1 file at a time")
         return
       }
@@ -95,7 +101,6 @@ export function FileUploader({
 
       const newFiles = acceptedFiles.map((file) =>
         Object.assign(file, {
-          id: crypto.randomUUID(),
           preview: URL.createObjectURL(file),
         })
       )
@@ -116,7 +121,8 @@ export function FileUploader({
         updatedFiles.length > 0 &&
         updatedFiles.length <= maxFiles
       ) {
-        const target = updatedFiles.length > 0 ? "Files" : "File"
+        const target =
+          updatedFiles.length > 0 ? `${updatedFiles.length} files` : `file`
 
         toast.promise(onUpload(updatedFiles), {
           loading: `Uploading ${target}...`,
@@ -133,9 +139,9 @@ export function FileUploader({
     [files, maxFiles, multiple, onUpload, onValueChange]
   )
 
-  function onRemove(file: FileWithPreview) {
+  function onRemove(index: number) {
     if (!files) return
-    const newFiles = files.filter((f) => f.id !== file.id)
+    const newFiles = files.filter((_, i) => i !== index)
     setFiles(newFiles)
     onValueChange?.(newFiles)
   }
@@ -172,7 +178,7 @@ export function FileUploader({
               className
             )}
           >
-            <input {...getInputProps()} {...props} />
+            <input {...getInputProps({ ...props })} />
             {isDragActive ? (
               <div className="flex flex-col items-center justify-center gap-4 sm:px-5">
                 <div className="rounded-full border border-dashed p-3">
@@ -213,11 +219,11 @@ export function FileUploader({
       {files?.length ? (
         <ScrollArea className="h-fit w-full px-3">
           <div className="max-h-48 space-y-4">
-            {files?.map((file) => (
+            {files?.map((file, index) => (
               <FileCard
-                key={file.id}
+                key={index}
                 file={file}
-                onRemove={() => onRemove(file)}
+                onRemove={() => onRemove(index)}
                 progress={progresses?.[file.name]}
               />
             ))}
@@ -238,21 +244,23 @@ function FileCard({ file, progress, onRemove }: FileCardProps) {
   return (
     <div className="relative flex items-center space-x-4">
       <div className="flex flex-1 space-x-4">
-        <Image
-          src={file.preview}
-          alt={file.name}
-          width={48}
-          height={48}
-          loading="lazy"
-          className="size-12 shrink-0 rounded-md object-cover"
-        />
+        <div className="relative aspect-square w-12 shrink-0 overflow-hidden">
+          <Image
+            src={file.preview}
+            alt={file.name}
+            fill
+            sizes="48px"
+            loading="lazy"
+            className="rounded-md object-cover"
+          />
+        </div>
         <div className="flex w-full flex-col gap-2">
           <div className="space-y-px">
             <p className="line-clamp-1 text-sm font-medium text-foreground/80">
-              {file.name.slice(0, 45)}.{file.type.split("/")[1]}
+              {file.name}
             </p>
             <p className="text-xs text-muted-foreground">
-              {(file.size / 1024 / 1024).toFixed(2)}MB
+              {formatBytes(file.size)}
             </p>
           </div>
           {progress ? <Progress value={progress} /> : null}

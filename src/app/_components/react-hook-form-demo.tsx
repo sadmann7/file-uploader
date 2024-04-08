@@ -7,12 +7,11 @@ import { toast } from "sonner"
 import { z } from "zod"
 
 import { getErrorMessage } from "@/lib/handle-error"
-import { useFileUpload } from "@/hooks/use-file-upload"
+import { useUploadFile } from "@/hooks/use-upload-file"
 import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,14 +22,14 @@ import { FileUploader } from "@/components/file-uploader"
 import { UploadedFilesCard } from "./uploaded-files-card"
 
 const schema = z.object({
-  images: z.array(z.unknown()).optional().default([]),
+  images: z.array(z.instanceof(File)),
 })
 
 type Schema = z.infer<typeof schema>
 
 export function ReactHookFormDemo() {
   const [loading, setLoading] = React.useState(false)
-  const { uploadFiles, progresses, uploadedFiles, isUploading } = useFileUpload(
+  const { uploadFiles, progresses, uploadedFiles, isUploading } = useUploadFile(
     "imageUploader",
     { defaultUploadedFiles: [] }
   )
@@ -44,10 +43,17 @@ export function ReactHookFormDemo() {
   function onSubmit(input: Schema) {
     setLoading(true)
 
-    toast.promise(uploadFiles(input.images as File[]), {
+    toast.promise(uploadFiles(input.images), {
       loading: "Uploading images...",
-      success: "Images uploaded successfully",
-      error: (err) => getErrorMessage(err),
+      success: () => {
+        form.reset()
+        setLoading(false)
+        return "Images uploaded"
+      },
+      error: (err) => {
+        setLoading(false)
+        return getErrorMessage(err)
+      },
     })
   }
 
@@ -75,9 +81,6 @@ export function ReactHookFormDemo() {
                     disabled={isUploading}
                   />
                 </FormControl>
-                <FormDescription>
-                  Upload up to 4 images. Each image should be less than 4MB.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
               {uploadedFiles.length > 0 ? (

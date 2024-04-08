@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import type { FileWithPreview } from "@/types"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -15,7 +14,7 @@ import {
 import { FileUploader } from "@/components/file-uploader"
 
 export function DialogUploaderDemo() {
-  const [files, setFiles] = React.useState<FileWithPreview[]>([])
+  const [files, setFiles] = React.useState<File[]>([])
 
   return (
     <Dialog>

@@ -7,7 +7,7 @@ import { getErrorMessage } from "@/lib/handle-error"
 import { uploadFiles } from "@/lib/uploadthing"
 import { type OurFileRouter } from "@/app/api/uploadthing/core"
 
-interface UseFileUploadProps
+interface UseUploadFileProps
   extends Pick<
     UploadFilesOptions<OurFileRouter, keyof OurFileRouter>,
     "headers" | "onUploadBegin" | "onUploadProgress" | "skipPolling"
@@ -15,9 +15,9 @@ interface UseFileUploadProps
   defaultUploadedFiles?: UploadedFile[]
 }
 
-export function useFileUpload(
+export function useUploadFile(
   endpoint: keyof OurFileRouter,
-  { defaultUploadedFiles = [], ...props }: UseFileUploadProps = {}
+  { defaultUploadedFiles = [], ...props }: UseUploadFileProps = {}
 ) {
   const [uploadedFiles, setUploadedFiles] =
     React.useState<UploadedFile[]>(defaultUploadedFiles)
@@ -40,9 +40,7 @@ export function useFileUpload(
         },
       })
 
-      setUploadedFiles((prev) => {
-        return prev ? [...prev, ...res] : res
-      })
+      setUploadedFiles((prev) => (prev ? [...prev, ...res] : res))
     } catch (err) {
       toast.error(getErrorMessage(err))
     } finally {

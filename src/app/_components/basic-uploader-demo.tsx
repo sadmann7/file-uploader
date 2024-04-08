@@ -1,12 +1,12 @@
 "use client"
 
-import { useFileUpload } from "@/hooks/use-file-upload"
+import { useUploadFile } from "@/hooks/use-upload-file"
 import { FileUploader } from "@/components/file-uploader"
 
 import { UploadedFilesCard } from "./uploaded-files-card"
 
 export function BasicUploaderDemo() {
-  const { uploadFiles, progresses, uploadedFiles, isUploading } = useFileUpload(
+  const { uploadFiles, progresses, uploadedFiles, isUploading } = useUploadFile(
     "imageUploader",
     { defaultUploadedFiles: [] }
   )
