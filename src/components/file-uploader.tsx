@@ -51,7 +51,10 @@ interface FileUploaderProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Accepted file types for the uploader.
    * @type { [key: string]: string[]}
-   * @default undefined
+   * @default
+   * ```ts
+   * { "image/*": [] }
+   * ```
    * @example accept={["image/png", "image/jpeg"]}
    */
   accept?: DropzoneProps["accept"]
@@ -95,7 +98,7 @@ export function FileUploader(props: FileUploaderProps) {
     onValueChange,
     onUpload,
     progresses,
-    accept,
+    accept = { "image/*": [] },
     maxSize = 1024 * 1024 * 2,
     maxFiles = 1,
     multiple = false,
