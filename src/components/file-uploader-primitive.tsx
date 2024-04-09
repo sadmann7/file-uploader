@@ -3,7 +3,6 @@
 import * as React from "react"
 import Image from "next/image"
 import { Cross2Icon, UploadIcon } from "@radix-ui/react-icons"
-import { useControllableState } from "@radix-ui/react-use-controllable-state"
 import { cva, type VariantProps } from "class-variance-authority"
 import {
   useDropzone,
@@ -14,6 +13,7 @@ import {
 import { toast } from "sonner"
 
 import { cn, formatBytes } from "@/lib/utils"
+import { useControllableState } from "@/hooks/use-controllable-state"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Progress } from "@/components/ui/progress"
