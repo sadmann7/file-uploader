@@ -2,7 +2,7 @@
 # See: https://github.com/shadcn-ui/ui/blob/main/.github/ISSUE_TEMPLATE/feature_request.yml
 
 name: "Feature request"
-description: Feature request for file-uploader
+description: Create a feature request for file-uploader
 title: "[feat]: "
 labels: ["✨ enhancement"]
 body:
@@ -15,7 +15,7 @@ body:
     id: feature-description
     attributes:
       label: Feature description
-      description: Tell us about your feature request
+      description: Tell us about your feature request.
       placeholder: "I think this feature would be great because..."
       value: "Describe your feature request..."
     validations:
@@ -35,7 +35,7 @@ body:
     id: terms
     attributes:
       label: Before submitting
-      description: By submitting this issue, you agree to follow our [Contributing Guidelines](https://github.com/sadmann7/file-uploader/blob/main/CONTRIBUTING.md).
+      description: Please ensure the following steps have been taken before submitting your feature request.
       options:
         - label: I've made research efforts and searched the documentation
           required: true
