@@ -1,10 +1,10 @@
 import { type MetadataRoute } from "next"
 
-import { siteConfig } from "@/config/site"
+import { absoluteUrl } from "@/lib/utils"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [""].map((route) => ({
-    url: `${siteConfig.url}${route}`,
+    url: absoluteUrl(route),
     lastModified: new Date().toISOString(),
   }))
 
