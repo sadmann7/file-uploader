@@ -66,7 +66,16 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        {(process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview") && (
+          // eslint-disable-next-line @next/next/no-sync-scripts
+          <script
+            data-project-id="hLNyQBNcupVWBOBOrdskrpv2OVrdn049SDw6mU6f"
+            data-is-production-environment="false"
+            src="https://snippet.meticulous.ai/v1/meticulous.js"
+          />
+        )}
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
