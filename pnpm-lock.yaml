@@ -40,7 +40,7 @@ dependencies:
     version: 0.10.1(typescript@5.4.5)(zod@3.23.4)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.5.0(fast-check@3.17.2)(next@14.2.0-canary.65)(react@18.2.0)(uploadthing@6.9.0)
+    version: 6.5.0(fast-check@3.17.2)(next@14.2.0-canary.65)(react@18.2.0)(uploadthing@6.10.0)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -79,7 +79,7 @@ dependencies:
     version: 1.0.7(tailwindcss@3.4.3)
   uploadthing:
     specifier: ^6.7.0
-    version: 6.9.0(next@14.2.0-canary.65)(tailwindcss@3.4.3)
+    version: 6.10.0(fast-check@3.17.2)(next@14.2.0-canary.65)(tailwindcss@3.4.3)
   zod:
     specifier: ^3.22.4
     version: 3.23.4
@@ -1587,11 +1587,11 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@uploadthing/mime-types@0.2.7:
-    resolution: {integrity: sha512-HfQpL1GSyLOOnIT4WqVv8aW3HotEpFKuuCnK+dUZThMzeiFs09s9J0wk5/VBwupXvIXQwMiB//bp9aUE2p/mFg==}
+  /@uploadthing/mime-types@0.2.8:
+    resolution: {integrity: sha512-x+OhjdgC+FXzIScuVDzWxUpPKRjq/WiXNh6bUz1pNAHsb7ecKhxHUfhdWg8+YkO32kDs8TCuMN1bVWTyJYDMQA==}
     dev: false
 
-  /@uploadthing/react@6.5.0(fast-check@3.17.2)(next@14.2.0-canary.65)(react@18.2.0)(uploadthing@6.9.0):
+  /@uploadthing/react@6.5.0(fast-check@3.17.2)(next@14.2.0-canary.65)(react@18.2.0)(uploadthing@6.10.0):
     resolution: {integrity: sha512-Mapjyl897k93b7SRi5A+Ez4hOpBrgu0vgRFbM2Ni/2GIul1jdJVebcOJ0LDB9TAZmQ4G4sMgL7h1QlfDUBSvlg==}
     peerDependencies:
       next: '*'
@@ -1602,12 +1602,12 @@ packages:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.0(react@18.2.0)
-      '@uploadthing/shared': 6.7.0(fast-check@3.17.2)
+      '@uploadthing/shared': 6.7.0(@uploadthing/mime-types@0.2.8)(fast-check@3.17.2)
       file-selector: 0.6.0
       next: 14.2.0-canary.65(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       tailwind-merge: 2.3.0
-      uploadthing: 6.9.0(next@14.2.0-canary.65)(tailwindcss@3.4.3)
+      uploadthing: 6.10.0(fast-check@3.17.2)(next@14.2.0-canary.65)(tailwindcss@3.4.3)
     transitivePeerDependencies:
       - '@uploadthing/mime-types'
       - fast-check
@@ -1616,19 +1616,7 @@ packages:
       - vue
     dev: false
 
-  /@uploadthing/shared@6.6.0(@uploadthing/mime-types@0.2.7):
-    resolution: {integrity: sha512-3mERSbD9/i83dF4rK6M/K3zcPo70mfo33VvrTE4U2Tf2HS8vjUvu8BmJjNZkZOSIoXenEnKmCxDf9vNPsdO65w==}
-    peerDependencies:
-      '@uploadthing/mime-types': 0.2.7
-    peerDependenciesMeta:
-      '@uploadthing/mime-types':
-        optional: true
-    dependencies:
-      '@uploadthing/mime-types': 0.2.7
-      std-env: 3.7.0
-    dev: false
-
-  /@uploadthing/shared@6.7.0(fast-check@3.17.2):
+  /@uploadthing/shared@6.7.0(@uploadthing/mime-types@0.2.8)(fast-check@3.17.2):
     resolution: {integrity: sha512-+5xBa3gdCoCI2R2HkIOAu0DRiZqEt3MtOHefNsuVlYjpEngeg04AHlNaTvAIFuBz6Wz43SFOiqpeQcpqGBUc5w==}
     peerDependencies:
       '@uploadthing/mime-types': 0.2.8
@@ -1637,6 +1625,7 @@ packages:
         optional: true
     dependencies:
       '@effect/schema': 0.66.7(effect@3.0.4)(fast-check@3.17.2)
+      '@uploadthing/mime-types': 0.2.8
       effect: 3.0.4
       std-env: 3.7.0
     transitivePeerDependencies:
@@ -4299,8 +4288,8 @@ packages:
       escalade: 3.1.2
       picocolors: 1.0.0
 
-  /uploadthing@6.9.0(next@14.2.0-canary.65)(tailwindcss@3.4.3):
-    resolution: {integrity: sha512-I985NeMkUHFK+ixfu6ztBGCzkAVYiLP8H3bIcYz+Oh13uFsqQAKrrG34ivdUk8mCjssGCOn8eN+skMPA6bNCoQ==}
+  /uploadthing@6.10.0(fast-check@3.17.2)(next@14.2.0-canary.65)(tailwindcss@3.4.3):
+    resolution: {integrity: sha512-4wuvfzg7mG0ffO2WfkoFdr5L4EHPXy55vN7Ju7/IJzddqTHWyH1p1ucE0Jsoniybn/tXB7hUsNQjVxJyvP41nQ==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
       express: '*'
@@ -4320,12 +4309,16 @@ packages:
       tailwindcss:
         optional: true
     dependencies:
-      '@uploadthing/mime-types': 0.2.7
-      '@uploadthing/shared': 6.6.0(@uploadthing/mime-types@0.2.7)
+      '@effect/schema': 0.66.7(effect@3.0.4)(fast-check@3.17.2)
+      '@uploadthing/mime-types': 0.2.8
+      '@uploadthing/shared': 6.7.0(@uploadthing/mime-types@0.2.8)(fast-check@3.17.2)
       consola: 3.2.3
+      effect: 3.0.4
       next: 14.2.0-canary.65(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)
       std-env: 3.7.0
       tailwindcss: 3.4.3
+    transitivePeerDependencies:
+      - fast-check
     dev: false
 
   /uri-js@4.4.1:
