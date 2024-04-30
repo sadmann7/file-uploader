@@ -40,7 +40,7 @@ dependencies:
     version: 0.10.1(typescript@5.4.5)(zod@3.23.5)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.5.0(fast-check@3.18.0)(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.0)
+    version: 6.5.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.0)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -334,6 +334,16 @@ packages:
       '@babel/helper-string-parser': 7.24.1
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+
+  /@effect/schema@0.66.12(effect@3.1.0)(fast-check@3.18.0):
+    resolution: {integrity: sha512-14X3D2FxTFDtll41MWw5OkLQCWqcs6pLYhs38oRK1o7rQ9gM2fdL4sw/gJu4dayAqv122GMgoIEOrzO5PyBuYA==}
+    peerDependencies:
+      effect: ^3.1.0
+      fast-check: ^3.13.2
+    dependencies:
+      effect: 3.1.0
+      fast-check: 3.18.0
+    dev: false
 
   /@effect/schema@0.66.7(effect@3.0.4)(fast-check@3.18.0):
     resolution: {integrity: sha512-bfxicQHhnZjlEe3W0a1e4B6OHWTTewigxbaSpzqIlwFrJ5pFh6MleBQaRt7X2YkTUbnkTYuNdY976W4tFJbIYg==}
@@ -1591,18 +1601,18 @@ packages:
     resolution: {integrity: sha512-x+OhjdgC+FXzIScuVDzWxUpPKRjq/WiXNh6bUz1pNAHsb7ecKhxHUfhdWg8+YkO32kDs8TCuMN1bVWTyJYDMQA==}
     dev: false
 
-  /@uploadthing/react@6.5.0(fast-check@3.18.0)(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.0):
-    resolution: {integrity: sha512-Mapjyl897k93b7SRi5A+Ez4hOpBrgu0vgRFbM2Ni/2GIul1jdJVebcOJ0LDB9TAZmQ4G4sMgL7h1QlfDUBSvlg==}
+  /@uploadthing/react@6.5.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.0):
+    resolution: {integrity: sha512-6ifqMO15RtryoL83oMJdglbTm2hsAcHKxrGUiVb/uecXIsjub8+BdanG/0IyKaaLmnZCa4cvFwE9MMkUnps3/A==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.10.0
+      uploadthing: 6.10.1
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.0(react@18.3.1)
-      '@uploadthing/shared': 6.7.0(@uploadthing/mime-types@0.2.8)(fast-check@3.18.0)
+      '@uploadthing/shared': 6.7.1
       file-selector: 0.6.0
       next: 14.2.0-canary.65(@babel/core@7.24.4)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
@@ -1610,7 +1620,6 @@ packages:
       uploadthing: 6.10.0(fast-check@3.18.0)(next@14.2.0-canary.65)(tailwindcss@3.4.3)
     transitivePeerDependencies:
       - '@uploadthing/mime-types'
-      - fast-check
       - solid-js
       - svelte
       - vue
@@ -1630,6 +1639,20 @@ packages:
       std-env: 3.7.0
     transitivePeerDependencies:
       - fast-check
+    dev: false
+
+  /@uploadthing/shared@6.7.1:
+    resolution: {integrity: sha512-4Imk46n+rwFaobfDuDSclYcH/OcpJA048Ww0il6nqT7EoXQ7Pa9NJfGkoNkS8+K8rT71IVljdaiaLEapgRxj0Q==}
+    peerDependencies:
+      '@uploadthing/mime-types': 0.2.9
+    peerDependenciesMeta:
+      '@uploadthing/mime-types':
+        optional: true
+    dependencies:
+      '@effect/schema': 0.66.12(effect@3.1.0)(fast-check@3.18.0)
+      effect: 3.1.0
+      fast-check: 3.18.0
+      std-env: 3.7.0
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.11.3):
@@ -2118,6 +2141,10 @@ packages:
 
   /effect@3.0.4:
     resolution: {integrity: sha512-KxkTPwNP2A2wUQ5CVLcp0gCpBSajHIL9XQwqpruKNdkMCvCVpLg8b3dx71ADwlzeB+LfUFe+cj4MgvrYQutXVQ==}
+    dev: false
+
+  /effect@3.1.0:
+    resolution: {integrity: sha512-A0kUH8qeH0jS0X4ViJXf/O5qfMQBrJRsTD1xHed4jpFF5ChUP96LmseaV9LQkFbVDo791REFWTOlMPGCyM/0Ng==}
     dev: false
 
   /electron-to-chromium@1.4.744:
