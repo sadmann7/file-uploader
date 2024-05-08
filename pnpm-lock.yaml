@@ -40,7 +40,7 @@ dependencies:
     version: 0.10.1(typescript@5.4.5)(zod@3.23.7)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.5.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.1)
+    version: 6.5.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.1)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -342,6 +342,16 @@ packages:
       fast-check: ^3.13.2
     dependencies:
       effect: 3.1.0
+      fast-check: 3.18.0
+    dev: false
+
+  /@effect/schema@0.66.15(effect@3.1.2)(fast-check@3.18.0):
+    resolution: {integrity: sha512-7dNBbCIo+pGs4V3edW9ujqK+f5ZbmzZn4Cm1euRN4NWPBAuPTXuToKLNR370ojimbis6OsuQbpGBNgzEGFMvrg==}
+    peerDependencies:
+      effect: ^3.1.2
+      fast-check: ^3.13.2
+    dependencies:
+      effect: 3.1.2
       fast-check: 3.18.0
     dev: false
 
@@ -1591,18 +1601,18 @@ packages:
     resolution: {integrity: sha512-7Ap2evP+niXNSXoOck4DUZUAKYrMRRpJ85n+ZxCuRsnr3iziOgv/Rt6es5SnMVgE/aOObxddOxbrxyOhISQWHQ==}
     dev: false
 
-  /@uploadthing/react@6.5.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.1):
-    resolution: {integrity: sha512-6ifqMO15RtryoL83oMJdglbTm2hsAcHKxrGUiVb/uecXIsjub8+BdanG/0IyKaaLmnZCa4cvFwE9MMkUnps3/A==}
+  /@uploadthing/react@6.5.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.1):
+    resolution: {integrity: sha512-lngY7lmW5DN8mIFmH1D4wrhJ1oxu0wyHWStpdwXymrkx0Y5sNbh4cdqdobj8uHuRxnExBd6915UEqbNXjW3QHg==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.10.1
+      uploadthing: 6.10.2
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.0(react@18.3.1)
-      '@uploadthing/shared': 6.7.1(@uploadthing/mime-types@0.2.9)
+      '@uploadthing/shared': 6.7.2
       file-selector: 0.6.0
       next: 14.2.0-canary.65(@babel/core@7.24.4)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
@@ -1626,6 +1636,20 @@ packages:
       '@effect/schema': 0.66.12(effect@3.1.0)(fast-check@3.18.0)
       '@uploadthing/mime-types': 0.2.9
       effect: 3.1.0
+      fast-check: 3.18.0
+      std-env: 3.7.0
+    dev: false
+
+  /@uploadthing/shared@6.7.2:
+    resolution: {integrity: sha512-4RGIxTQzf64moP7wJAnzYcyHrwBc/m7hocUagNsPN4jw588/mGKlyijoNbDo+kErftnYJQz+Vapb9sBz+fadOQ==}
+    peerDependencies:
+      '@uploadthing/mime-types': 0.2.9
+    peerDependenciesMeta:
+      '@uploadthing/mime-types':
+        optional: true
+    dependencies:
+      '@effect/schema': 0.66.15(effect@3.1.2)(fast-check@3.18.0)
+      effect: 3.1.2
       fast-check: 3.18.0
       std-env: 3.7.0
     dev: false
@@ -2116,6 +2140,10 @@ packages:
 
   /effect@3.1.0:
     resolution: {integrity: sha512-A0kUH8qeH0jS0X4ViJXf/O5qfMQBrJRsTD1xHed4jpFF5ChUP96LmseaV9LQkFbVDo791REFWTOlMPGCyM/0Ng==}
+    dev: false
+
+  /effect@3.1.2:
+    resolution: {integrity: sha512-XakSWck6w6ROqKyEys0tKE9K6Gx2p8W/09u2ZTEZZrneO5Z3QEdPhXzWTyC73kD5zUvfJinZLVIas8I1xoHaTg==}
     dev: false
 
   /electron-to-chromium@1.4.744:
