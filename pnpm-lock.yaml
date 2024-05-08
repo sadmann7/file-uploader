@@ -37,7 +37,7 @@ dependencies:
     version: 1.0.7(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
   '@t3-oss/env-nextjs':
     specifier: ^0.10.0
-    version: 0.10.1(typescript@5.4.5)(zod@3.23.7)
+    version: 0.10.1(typescript@5.4.5)(zod@3.23.8)
   '@uploadthing/react':
     specifier: ^6.4.1
     version: 6.5.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.3)
@@ -82,7 +82,7 @@ dependencies:
     version: 6.10.3(next@14.2.0-canary.65)(tailwindcss@3.4.3)
   zod:
     specifier: ^3.22.4
-    version: 3.23.7
+    version: 3.23.8
 
 devDependencies:
   '@ianvs/prettier-plugin-sort-imports':
@@ -1292,7 +1292,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@t3-oss/env-core@0.10.1(typescript@5.4.5)(zod@3.23.7):
+  /@t3-oss/env-core@0.10.1(typescript@5.4.5)(zod@3.23.8):
     resolution: {integrity: sha512-GcKZiCfWks5CTxhezn9k5zWX3sMDIYf6Kaxy2Gx9YEQftFcz8hDRN56hcbylyAO3t4jQnQ5ifLawINsNgCDpOg==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1302,10 +1302,10 @@ packages:
         optional: true
     dependencies:
       typescript: 5.4.5
-      zod: 3.23.7
+      zod: 3.23.8
     dev: false
 
-  /@t3-oss/env-nextjs@0.10.1(typescript@5.4.5)(zod@3.23.7):
+  /@t3-oss/env-nextjs@0.10.1(typescript@5.4.5)(zod@3.23.8):
     resolution: {integrity: sha512-iy2qqJLnFh1RjEWno2ZeyTu0ufomkXruUsOZludzDIroUabVvHsrSjtkHqwHp1/pgPUzN3yBRHMILW162X7x2Q==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1314,9 +1314,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@t3-oss/env-core': 0.10.1(typescript@5.4.5)(zod@3.23.7)
+      '@t3-oss/env-core': 0.10.1(typescript@5.4.5)(zod@3.23.8)
       typescript: 5.4.5
-      zod: 3.23.7
+      zod: 3.23.8
     dev: false
 
   /@total-typescript/ts-reset@0.5.1:
@@ -4465,6 +4465,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.23.7:
-    resolution: {integrity: sha512-NBeIoqbtOiUMomACV/y+V3Qfs9+Okr18vR5c/5pHClPpufWOrsx8TENboDPe265lFdfewX2yBtNTLPvnmCxwog==}
+  /zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
     dev: false
