@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   keywords: [
     "nextjs",
     "react",
+    "uploader",
     "file-uploader",
     "file-input",
     "shadcn-file-uploader",
