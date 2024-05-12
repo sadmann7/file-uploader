@@ -11,5 +11,5 @@ export const ratelimit = new Ratelimit({
    * instance with other applications and want to avoid key collisions. The default prefix is
    * "@upstash/ratelimit"
    */
-  prefix: "uploader",
+  prefix: "uploader/ratelimit",
 })
