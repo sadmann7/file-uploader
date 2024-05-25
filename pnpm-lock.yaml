@@ -40,7 +40,7 @@ dependencies:
     version: 0.10.1(typescript@5.4.5)(zod@3.23.8)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.5.4(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.4)
+    version: 6.6.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.4)
   '@upstash/ratelimit':
     specifier: ^1.1.3
     version: 1.1.3
@@ -1588,25 +1588,24 @@ packages:
     resolution: {integrity: sha512-kz3F0oEgAyts25NAGXlUBCWh3mXonbSOQJFGFMawHuIgbUbnzXbe4w5WI+0XdneCbjNmikfWrdWrs8m/7HATfQ==}
     dev: false
 
-  /@uploadthing/react@6.5.4(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.4):
-    resolution: {integrity: sha512-c1RFZggXqlc4wQ0hnxjgOM+9066NUMOJmUAPG2N7EKYO64/uRrZMpq5CvYdxsKwI0YiCnhIeInct21QvSSEa6Q==}
+  /@uploadthing/react@6.6.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.10.4):
+    resolution: {integrity: sha512-jLN4Oy21d0n8F6CNPl9qjEu0/Q1rnddSxny/02Lm89L/sYuR4RXfk1vBgBGPAGXBak0BO9z5eEmYURLrXXUAJQ==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.10.4
+      uploadthing: 6.12.0
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.1(react@18.3.1)
-      '@uploadthing/shared': 6.7.4(@uploadthing/mime-types@0.2.10)
+      '@uploadthing/shared': 6.7.5
       file-selector: 0.6.0
       next: 14.2.0-canary.65(@babel/core@7.24.4)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       tailwind-merge: 2.3.0
       uploadthing: 6.10.4(next@14.2.0-canary.65)(tailwindcss@3.4.3)
     transitivePeerDependencies:
-      - '@uploadthing/mime-types'
       - solid-js
       - svelte
       - vue
@@ -1622,6 +1621,14 @@ packages:
     dependencies:
       '@uploadthing/mime-types': 0.2.10
       effect: 3.1.4
+      std-env: 3.7.0
+    dev: false
+
+  /@uploadthing/shared@6.7.5:
+    resolution: {integrity: sha512-BZXzvh6zGEt4ip//mxfXdRTNWYw9XJ6tommL6A1TEo2l8jvdNbUpPUwXnMVWBMwio2b48BO7D9V3siYIKMD4pg==}
+    dependencies:
+      '@uploadthing/mime-types': 0.2.10
+      effect: 3.2.5
       std-env: 3.7.0
     dev: false
 
@@ -2134,6 +2141,10 @@ packages:
 
   /effect@3.1.4:
     resolution: {integrity: sha512-eAKVwRyDF+8wCRKWY6yK7inCwsTGjLIyZTggbQjlVp/ziHBmfVsOCn/JOyW5iFjRoeZv7+TsLMUPjoMwkt1QQA==}
+    dev: false
+
+  /effect@3.2.5:
+    resolution: {integrity: sha512-Qs/NAX2s/ClRATbiImc4IuzzAs+1RaFzZm7zRx9NKmLFnIeCC+h2LwkrOuprG3PsDM+g1IfPEFWvVbTSDKPnFA==}
     dev: false
 
   /electron-to-chromium@1.4.744:
