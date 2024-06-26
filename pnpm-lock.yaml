@@ -40,7 +40,7 @@ dependencies:
     version: 0.10.1(typescript@5.5.2)(zod@3.23.8)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.6.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.12.0)
+    version: 6.7.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.12.0)
   '@upstash/ratelimit':
     specifier: ^1.1.3
     version: 1.2.1
@@ -1585,18 +1585,18 @@ packages:
     resolution: {integrity: sha512-kz3F0oEgAyts25NAGXlUBCWh3mXonbSOQJFGFMawHuIgbUbnzXbe4w5WI+0XdneCbjNmikfWrdWrs8m/7HATfQ==}
     dev: false
 
-  /@uploadthing/react@6.6.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.12.0):
-    resolution: {integrity: sha512-jLN4Oy21d0n8F6CNPl9qjEu0/Q1rnddSxny/02Lm89L/sYuR4RXfk1vBgBGPAGXBak0BO9z5eEmYURLrXXUAJQ==}
+  /@uploadthing/react@6.7.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.12.0):
+    resolution: {integrity: sha512-+jhIL7A1gZ/WA0e7N7PKo5Yhsn0RUU7u6aKvAfXzJ2/9NlNueCP7hMs+WXkZMIJMhW3Ch50qh2elYeFSgvV9NQ==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.12.0
+      uploadthing: 6.13.0
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.1(react@18.3.1)
-      '@uploadthing/shared': 6.7.5
+      '@uploadthing/shared': 6.7.6
       file-selector: 0.6.0
       next: 14.2.0-canary.65(@babel/core@7.24.7)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
@@ -1613,6 +1613,14 @@ packages:
     dependencies:
       '@uploadthing/mime-types': 0.2.10
       effect: 3.2.5
+      std-env: 3.7.0
+    dev: false
+
+  /@uploadthing/shared@6.7.6:
+    resolution: {integrity: sha512-mUwacb8Txy/DpLP4rhRhI9ktlXi8oXbr+OxfzMtCPk9gmXM1kQ3j1RBInsdtPc9Uwa4M6oMxjZoUmd7WTnX1fA==}
+    dependencies:
+      '@uploadthing/mime-types': 0.2.10
+      effect: 3.4.2
       std-env: 3.7.0
     dev: false
 
@@ -2143,6 +2151,10 @@ packages:
     resolution: {integrity: sha512-Qs/NAX2s/ClRATbiImc4IuzzAs+1RaFzZm7zRx9NKmLFnIeCC+h2LwkrOuprG3PsDM+g1IfPEFWvVbTSDKPnFA==}
     dev: false
 
+  /effect@3.4.2:
+    resolution: {integrity: sha512-y20gL/fMqm4mUL71Tcuu3pYQ7Phm8RMX/hUt6vVfkg4Iac/RvMjP5DrJxT6RI0j0VNRLhTgb6pyL3oXeqxTeRg==}
+    dev: false
+
   /electron-to-chromium@1.4.812:
     resolution: {integrity: sha512-7L8fC2Ey/b6SePDFKR2zHAy4mbdp1/38Yk5TsARO66W3hC5KEaeKMMHoxwtuH+jcu2AYLSn9QX04i95t6Fl1Hg==}
 
@@ -2659,7 +2671,7 @@ packages:
     resolution: {integrity: sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==}
     engines: {node: '>= 12'}
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
     dev: false
 
   /fill-range@7.1.1:
