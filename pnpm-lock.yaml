@@ -40,7 +40,7 @@ dependencies:
     version: 0.10.1(typescript@5.5.2)(zod@3.23.8)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.7.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.0)
+    version: 6.7.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.0)
   '@upstash/ratelimit':
     specifier: ^1.1.3
     version: 1.2.1
@@ -1564,18 +1564,18 @@ packages:
     resolution: {integrity: sha512-kz3F0oEgAyts25NAGXlUBCWh3mXonbSOQJFGFMawHuIgbUbnzXbe4w5WI+0XdneCbjNmikfWrdWrs8m/7HATfQ==}
     dev: false
 
-  /@uploadthing/react@6.7.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.0):
-    resolution: {integrity: sha512-KLhK4DvN5yo29X5/WhbHnCaD9CL1D4KAoKPd+0rIkvJcM92KYxKF9XiPGz4tsll2xvvFORTv2IeeS/9vxpXamQ==}
+  /@uploadthing/react@6.7.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.0):
+    resolution: {integrity: sha512-9Mdslj1S24qbISA/LE3In5OFQ/U7OxdMbBlTPkJxKPkh+UW7BqZS0XuRTfkZYPkdBGDoXw5aH7VG3D/vGgpmxg==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.13.1
+      uploadthing: 6.13.2
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.1(react@18.3.1)
-      '@uploadthing/shared': 6.7.7
+      '@uploadthing/shared': 6.7.8
       file-selector: 0.6.0
       next: 14.2.0-canary.65(@babel/core@7.24.7)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
@@ -1595,11 +1595,11 @@ packages:
       std-env: 3.7.0
     dev: false
 
-  /@uploadthing/shared@6.7.7:
-    resolution: {integrity: sha512-dwjLq/yAZs4sGRQ5nXs+IDUaC9G5gdojN9iB2v+myC5p0vQ6bVJ2e/de3dw8GWcZLOgnI2aAunPSzE3hrE23aQ==}
+  /@uploadthing/shared@6.7.8:
+    resolution: {integrity: sha512-dLNa9GpdeiCHc/Nd0+BfaJ3wXvWIztBAaWIsNNPoaKiU3qhHoQd+5jDVx4oYKYVANqnv9s2CJW7di8Th5xy7Cw==}
     dependencies:
       '@uploadthing/mime-types': 0.2.10
-      effect: 3.4.2
+      effect: 3.4.5
       std-env: 3.7.0
     dev: false
 
@@ -2128,6 +2128,10 @@ packages:
 
   /effect@3.4.2:
     resolution: {integrity: sha512-y20gL/fMqm4mUL71Tcuu3pYQ7Phm8RMX/hUt6vVfkg4Iac/RvMjP5DrJxT6RI0j0VNRLhTgb6pyL3oXeqxTeRg==}
+    dev: false
+
+  /effect@3.4.5:
+    resolution: {integrity: sha512-aTonOH68tUttSdYwMkiuky3hjgn3pu7yInNaE8rU2EDKQ8zr9Me78WcvWBQKe4u1gvbBH77y9dAKqn98lNIfNQ==}
     dev: false
 
   /electron-to-chromium@1.4.812:
