@@ -46,7 +46,7 @@ dependencies:
     version: 1.2.1
   '@upstash/redis':
     specifier: ^1.30.1
-    version: 1.31.6
+    version: 1.32.0
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -1599,7 +1599,7 @@ packages:
     resolution: {integrity: sha512-9NXXxZ5y1/A/zqKLlVT7NsAWSggJfOjB0hG6Ffx29b4jbzHOiQVWB55h5+j2clT9Ib+mNPXn0iB5zN3aWLkICw==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@upstash/redis': 1.31.6
+      '@upstash/redis': 1.32.0
     dev: false
 
   /@upstash/ratelimit@1.2.1:
@@ -1608,8 +1608,8 @@ packages:
       '@upstash/core-analytics': 0.0.9
     dev: false
 
-  /@upstash/redis@1.31.6:
-    resolution: {integrity: sha512-7sDQQqvVnnV+2PUVGjocITa34CULGLoWhmfSY/LtpxNYv24EsgOk9VXhmGXIyzJBcXxB614wOF6ccEN0Lr7fqQ==}
+  /@upstash/redis@1.32.0:
+    resolution: {integrity: sha512-KBzCjOgF9mhNcV4HTz7U8g7QTdLVEKi1sSe/97u0E+HkzdPmDt3j9lIPIHEUJz6RrdVH6s4HW4JcPvMLC7w3ew==}
     dependencies:
       crypto-js: 4.2.0
     dev: false
