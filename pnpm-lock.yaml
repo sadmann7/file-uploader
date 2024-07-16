@@ -42,8 +42,8 @@ dependencies:
     specifier: ^6.4.1
     version: 6.7.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.2)
   '@upstash/ratelimit':
-    specifier: ^1.1.3
-    version: 1.2.1
+    specifier: ^2.0.0
+    version: 2.0.0
   '@upstash/redis':
     specifier: ^1.30.1
     version: 1.32.0
@@ -1603,8 +1603,8 @@ packages:
       '@upstash/redis': 1.32.0
     dev: false
 
-  /@upstash/ratelimit@1.2.1:
-    resolution: {integrity: sha512-o01lV1yFS5Fzj5KONZmNyVch/Qrlj785B2ob+kStUmxn8F6xXk7IHTQqVcHE+Ce3CmT/qQIwvMxDZftyJ5wYpQ==}
+  /@upstash/ratelimit@2.0.0:
+    resolution: {integrity: sha512-UbOdDpC6CFsrQyevfwbpxr92OkDccKr+KpC9+idxOrmr3U6XbIQq/UIunSLIZ7kYwxoY5j3i7Ky5nwHZ3/DTvA==}
     dependencies:
       '@upstash/core-analytics': 0.0.9
     dev: false
