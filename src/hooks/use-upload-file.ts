@@ -24,7 +24,7 @@ export function useUploadFile(
   const [progresses, setProgresses] = React.useState<Record<string, number>>({})
   const [isUploading, setIsUploading] = React.useState(false)
 
-  async function uploadThings(files: File[]) {
+  async function onUpload(files: File[]) {
     setIsUploading(true)
     try {
       const res = await uploadFiles(endpoint, {
@@ -50,9 +50,9 @@ export function useUploadFile(
   }
 
   return {
+    onUpload,
     uploadedFiles,
     progresses,
-    uploadFiles: uploadThings,
     isUploading,
   }
 }

@@ -1,6 +1,6 @@
 # [File Uploader](https://uploader.sadmn.com)
 
-This is a file uploader component built with `shadnc/ui`, and `react-dropzone`. It is bootstrapped with `create-t3-app`.
+This is a file uploader built with `shadnc/ui`, and `react-dropzone`. It is bootstrapped with `create-t3-app`.
 
 [![File Uploader](./public/images/screenshot.png)](https://uploader.sadmn.com)
 
@@ -9,7 +9,7 @@ This is a file uploader component built with `shadnc/ui`, and `react-dropzone`. 
 - **Framework:** [Next.js](https://nextjs.org)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **UI Components:** [shadcn/ui](https://ui.shadcn.com)
-- **Drag and Drop:** [react-dropzone](https://react-dropzone.js.org/)
+- **DND Uploader:** [react-dropzone](https://react-dropzone.js.org/)
 - **Storage:** [uploadthing](https://uploadthing.com)
 - **Validation:** [Zod](https://zod.dev)
 

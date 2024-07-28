@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { Cross2Icon, UploadIcon } from "@radix-ui/react-icons"
+import { Cross2Icon, FileTextIcon, UploadIcon } from "@radix-ui/react-icons"
 import Dropzone, {
   type DropzoneProps,
   type FileRejection,
@@ -26,11 +26,11 @@ interface FileUploaderProps extends React.HTMLAttributes<HTMLDivElement> {
 
   /**
    * Function to be called when the value changes.
-   * @type React.Dispatch<React.SetStateAction<File[]>>
+   * @type (files: File[]) => void
    * @default undefined
    * @example onValueChange={(files) => setFiles(files)}
    */
-  onValueChange?: React.Dispatch<React.SetStateAction<File[]>>
+  onValueChange?: (files: File[]) => void
 
   /**
    * Function to be called when files are uploaded.
@@ -71,9 +71,9 @@ interface FileUploaderProps extends React.HTMLAttributes<HTMLDivElement> {
    * Maximum number of files for the uploader.
    * @type number | undefined
    * @default 1
-   * @example maxFiles={5}
+   * @example maxFileCount={4}
    */
-  maxFiles?: DropzoneProps["maxFiles"]
+  maxFileCount?: DropzoneProps["maxFiles"]
 
   /**
    * Whether the uploader should accept multiple files.
@@ -98,9 +98,11 @@ export function FileUploader(props: FileUploaderProps) {
     onValueChange,
     onUpload,
     progresses,
-    accept = { "image/*": [] },
+    accept = {
+      "image/*": [],
+    },
     maxSize = 1024 * 1024 * 2,
-    maxFiles = 1,
+    maxFileCount = 1,
     multiple = false,
     disabled = false,
     className,
@@ -114,13 +116,13 @@ export function FileUploader(props: FileUploaderProps) {
 
   const onDrop = React.useCallback(
     (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
-      if (!multiple && maxFiles === 1 && acceptedFiles.length > 1) {
+      if (!multiple && maxFileCount === 1 && acceptedFiles.length > 1) {
         toast.error("Cannot upload more than 1 file at a time")
         return
       }
 
-      if ((files?.length ?? 0) + acceptedFiles.length > maxFiles) {
-        toast.error(`Cannot upload more than ${maxFiles} files`)
+      if ((files?.length ?? 0) + acceptedFiles.length > maxFileCount) {
+        toast.error(`Cannot upload more than ${maxFileCount} files`)
         return
       }
 
@@ -143,7 +145,7 @@ export function FileUploader(props: FileUploaderProps) {
       if (
         onUpload &&
         updatedFiles.length > 0 &&
-        updatedFiles.length <= maxFiles
+        updatedFiles.length <= maxFileCount
       ) {
         const target =
           updatedFiles.length > 0 ? `${updatedFiles.length} files` : `file`
@@ -159,7 +161,7 @@ export function FileUploader(props: FileUploaderProps) {
       }
     },
 
-    [files, maxFiles, multiple, onUpload, setFiles]
+    [files, maxFileCount, multiple, onUpload, setFiles]
   )
 
   function onRemove(index: number) {
@@ -182,7 +184,7 @@ export function FileUploader(props: FileUploaderProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const isDisabled = disabled || (files?.length ?? 0) >= maxFiles
+  const isDisabled = disabled || (files?.length ?? 0) >= maxFileCount
 
   return (
     <div className="relative flex flex-col gap-6 overflow-hidden">
@@ -190,8 +192,8 @@ export function FileUploader(props: FileUploaderProps) {
         onDrop={onDrop}
         accept={accept}
         maxSize={maxSize}
-        maxFiles={maxFiles}
-        multiple={maxFiles > 1 || multiple}
+        maxFiles={maxFileCount}
+        multiple={maxFileCount > 1 || multiple}
         disabled={isDisabled}
       >
         {({ getRootProps, getInputProps, isDragActive }) => (
@@ -227,14 +229,14 @@ export function FileUploader(props: FileUploaderProps) {
                     aria-hidden="true"
                   />
                 </div>
-                <div className="space-y-px">
+                <div className="flex flex-col gap-px">
                   <p className="font-medium text-muted-foreground">
                     Drag {`'n'`} drop files here, or click to select files
                   </p>
                   <p className="text-sm text-muted-foreground/70">
                     You can upload
-                    {maxFiles > 1
-                      ? ` ${maxFiles === Infinity ? "multiple" : maxFiles}
+                    {maxFileCount > 1
+                      ? ` ${maxFileCount === Infinity ? "multiple" : maxFileCount}
                       files (up to ${formatBytes(maxSize)} each)`
                       : ` a file with ${formatBytes(maxSize)}`}
                   </p>
@@ -246,7 +248,7 @@ export function FileUploader(props: FileUploaderProps) {
       </Dropzone>
       {files?.length ? (
         <ScrollArea className="h-fit w-full px-3">
-          <div className="max-h-48 space-y-4">
+          <div className="flex max-h-48 flex-col gap-4">
             {files?.map((file, index) => (
               <FileCard
                 key={index}
@@ -270,20 +272,11 @@ interface FileCardProps {
 
 function FileCard({ file, progress, onRemove }: FileCardProps) {
   return (
-    <div className="relative flex items-center space-x-4">
-      <div className="flex flex-1 space-x-4">
-        {isFileWithPreview(file) ? (
-          <Image
-            src={file.preview}
-            alt={file.name}
-            width={48}
-            height={48}
-            loading="lazy"
-            className="aspect-square shrink-0 rounded-md object-cover"
-          />
-        ) : null}
+    <div className="relative flex items-center gap-2.5">
+      <div className="flex flex-1 gap-2.5">
+        {isFileWithPreview(file) ? <FilePreview file={file} /> : null}
         <div className="flex w-full flex-col gap-2">
-          <div className="space-y-px">
+          <div className="flex flex-col gap-px">
             <p className="line-clamp-1 text-sm font-medium text-foreground/80">
               {file.name}
             </p>
@@ -302,7 +295,7 @@ function FileCard({ file, progress, onRemove }: FileCardProps) {
           className="size-7"
           onClick={onRemove}
         >
-          <Cross2Icon className="size-4 " aria-hidden="true" />
+          <Cross2Icon className="size-4" aria-hidden="true" />
           <span className="sr-only">Remove file</span>
         </Button>
       </div>
@@ -312,4 +305,30 @@ function FileCard({ file, progress, onRemove }: FileCardProps) {
 
 function isFileWithPreview(file: File): file is File & { preview: string } {
   return "preview" in file && typeof file.preview === "string"
+}
+
+interface FilePreviewProps {
+  file: File & { preview: string }
+}
+
+function FilePreview({ file }: FilePreviewProps) {
+  if (file.type.startsWith("image/")) {
+    return (
+      <Image
+        src={file.preview}
+        alt={file.name}
+        width={48}
+        height={48}
+        loading="lazy"
+        className="aspect-square shrink-0 rounded-md object-cover"
+      />
+    )
+  }
+
+  return (
+    <FileTextIcon
+      className="size-10 text-muted-foreground"
+      aria-hidden="true"
+    />
+  )
 }

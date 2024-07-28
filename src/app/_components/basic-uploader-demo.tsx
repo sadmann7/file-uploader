@@ -6,7 +6,7 @@ import { FileUploader } from "@/components/file-uploader"
 import { UploadedFilesCard } from "./uploaded-files-card"
 
 export function BasicUploaderDemo() {
-  const { uploadFiles, progresses, uploadedFiles, isUploading } = useUploadFile(
+  const { onUpload, progresses, uploadedFiles, isUploading } = useUploadFile(
     "imageUploader",
     { defaultUploadedFiles: [] }
   )
@@ -14,10 +14,10 @@ export function BasicUploaderDemo() {
   return (
     <div className="space-y-6">
       <FileUploader
-        maxFiles={4}
+        maxFileCount={4}
         maxSize={4 * 1024 * 1024}
         progresses={progresses}
-        onUpload={uploadFiles}
+        onUpload={onUpload}
         disabled={isUploading}
       />
       <UploadedFilesCard uploadedFiles={uploadedFiles} />
