@@ -79,7 +79,7 @@ dependencies:
     version: 1.5.0(react-dom@18.3.1)(react@18.3.1)
   tailwind-merge:
     specifier: ^2.2.2
-    version: 2.5.1
+    version: 2.5.2
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.4.9)
@@ -1573,7 +1573,7 @@ packages:
       file-selector: 0.6.0
       next: 14.2.0-canary.65(@babel/core@7.24.8)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
-      tailwind-merge: 2.5.1
+      tailwind-merge: 2.5.2
       uploadthing: 6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.9)
     transitivePeerDependencies:
       - solid-js
@@ -4214,8 +4214,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwind-merge@2.5.1:
-    resolution: {integrity: sha512-1zKDdExKvNltulO+J0x/Rqv40xQn78FHsEQVn3rxt8e4HdebRIT6o6zGeLYlGuxd3Efue9Y69qsp8vKwEhuEeg==}
+  /tailwind-merge@2.5.2:
+    resolution: {integrity: sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==}
     dev: false
 
   /tailwindcss-animate@1.0.7(tailwindcss@3.4.9):
