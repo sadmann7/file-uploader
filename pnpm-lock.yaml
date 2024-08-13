@@ -82,10 +82,10 @@ dependencies:
     version: 2.5.2
   tailwindcss-animate:
     specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@3.4.9)
+    version: 1.0.7(tailwindcss@3.4.10)
   uploadthing:
     specifier: ^6.7.0
-    version: 6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.9)
+    version: 6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.10)
   zod:
     specifier: ^3.22.4
     version: 3.23.8
@@ -126,7 +126,7 @@ devDependencies:
     version: 9.1.0(eslint@8.57.0)
   eslint-plugin-tailwindcss:
     specifier: ^3.15.1
-    version: 3.17.4(tailwindcss@3.4.9)
+    version: 3.17.4(tailwindcss@3.4.10)
   postcss:
     specifier: ^8.4.38
     version: 8.4.41
@@ -141,7 +141,7 @@ devDependencies:
     version: 6.0.1
   tailwindcss:
     specifier: ^3.4.3
-    version: 3.4.9
+    version: 3.4.10
   typescript:
     specifier: ^5.4.4
     version: 5.5.4
@@ -1574,7 +1574,7 @@ packages:
       next: 14.2.0-canary.65(@babel/core@7.24.8)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       tailwind-merge: 2.5.2
-      uploadthing: 6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.9)
+      uploadthing: 6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.10)
     transitivePeerDependencies:
       - solid-js
       - svelte
@@ -2508,7 +2508,7 @@ packages:
       string.prototype.repeat: 1.0.0
     dev: true
 
-  /eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.9):
+  /eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.10):
     resolution: {integrity: sha512-gJAEHmCq2XFfUP/+vwEfEJ9igrPeZFg+skeMtsxquSQdxba9XRk5bn0Bp9jxG1VV9/wwPKi1g3ZjItu6MIjhNg==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
@@ -2516,7 +2516,7 @@ packages:
     dependencies:
       fast-glob: 3.3.2
       postcss: 8.4.41
-      tailwindcss: 3.4.9
+      tailwindcss: 3.4.10
     dev: true
 
   /eslint-scope@7.2.2:
@@ -2796,7 +2796,7 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
-      foreground-child: 3.2.1
+      foreground-child: 3.3.0
       jackspeak: 2.3.6
       minimatch: 9.0.5
       minipass: 7.1.2
@@ -3653,10 +3653,10 @@ packages:
       postcss: ^8.2.14
     dependencies:
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
 
-  /postcss-selector-parser@6.1.1:
-    resolution: {integrity: sha512-b4dlw/9V8A71rLIDsSwVmak9z2DuBUB7CA1/wSdelNEzqsjoSPeADTWNO09lpH49Diy3/JIZ2bSPB1dI3LJCHg==}
+  /postcss-selector-parser@6.1.2:
+    resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
     engines: {node: '>=4'}
     dependencies:
       cssesc: 3.0.0
@@ -4218,16 +4218,16 @@ packages:
     resolution: {integrity: sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==}
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@3.4.9):
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.10):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.4.9
+      tailwindcss: 3.4.10
     dev: false
 
-  /tailwindcss@3.4.9:
-    resolution: {integrity: sha512-1SEOvRr6sSdV5IDf9iC+NU4dhwdqzF4zKKq3sAbasUWHEM6lsMhX+eNN5gkPx1BvLFEnZQEUFbXnGj8Qlp83Pg==}
+  /tailwindcss@3.4.10:
+    resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4250,7 +4250,7 @@ packages:
       postcss-js: 4.0.1(postcss@8.4.41)
       postcss-load-config: 4.0.2(postcss@8.4.41)
       postcss-nested: 6.2.0(postcss@8.4.41)
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
       resolve: 1.22.8
       sucrase: 3.35.0
     transitivePeerDependencies:
@@ -4399,7 +4399,7 @@ packages:
       escalade: 3.1.2
       picocolors: 1.0.1
 
-  /uploadthing@6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.9):
+  /uploadthing@6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.10):
     resolution: {integrity: sha512-hrxwOgqKs8siczPloop72drRBiUYaFDHMp45OR/sSAaAbOPyGBmBL88Bi4UWCvgC+aBWCLRxtMEGeoqrfu+OMg==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
@@ -4430,7 +4430,7 @@ packages:
       effect: 3.4.5
       next: 14.2.0-canary.65(@babel/core@7.24.8)(react-dom@18.3.1)(react@18.3.1)
       std-env: 3.7.0
-      tailwindcss: 3.4.9
+      tailwindcss: 3.4.10
     dev: false
 
   /uri-js@4.4.1:
