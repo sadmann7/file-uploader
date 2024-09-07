@@ -40,7 +40,7 @@ dependencies:
     version: 0.11.1(typescript@5.5.4)(zod@3.23.8)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.7.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.2)
+    version: 6.7.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3)
   '@upstash/ratelimit':
     specifier: ^2.0.0
     version: 2.0.2
@@ -85,7 +85,7 @@ dependencies:
     version: 1.0.7(tailwindcss@3.4.10)
   uploadthing:
     specifier: ^6.7.0
-    version: 6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.10)
+    version: 6.13.3(next@14.2.0-canary.65)(tailwindcss@3.4.10)
   zod:
     specifier: ^3.22.4
     version: 3.23.8
@@ -342,13 +342,13 @@ packages:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  /@effect/schema@0.68.12(effect@3.4.5):
-    resolution: {integrity: sha512-UWJsFXzeYTBQYnftwI1KR2uaxIZ8fk+kffDS7BnJwnGjPPgODq3/AzeoBDSu1MAlnwBKOz+QRdMuSMxrT/pHig==}
+  /@effect/schema@0.68.18(effect@3.4.8):
+    resolution: {integrity: sha512-+knLs36muKsyqIvQTB0itGp5Lwy+5jgEC0G5P8wSsrB6EWGFirS87QjbaFYGbg32l/P51RM+9cPMiAEyICwN6g==}
     peerDependencies:
-      effect: ^3.4.5
+      effect: ^3.4.8
     dependencies:
-      effect: 3.4.5
-      fast-check: 3.19.0
+      effect: 3.4.8
+      fast-check: 3.22.0
     dev: false
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.57.0):
@@ -1563,7 +1563,7 @@ packages:
     resolution: {integrity: sha512-kz3F0oEgAyts25NAGXlUBCWh3mXonbSOQJFGFMawHuIgbUbnzXbe4w5WI+0XdneCbjNmikfWrdWrs8m/7HATfQ==}
     dev: false
 
-  /@uploadthing/react@6.7.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.2):
+  /@uploadthing/react@6.7.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3):
     resolution: {integrity: sha512-9Mdslj1S24qbISA/LE3In5OFQ/U7OxdMbBlTPkJxKPkh+UW7BqZS0XuRTfkZYPkdBGDoXw5aH7VG3D/vGgpmxg==}
     peerDependencies:
       next: '*'
@@ -1579,7 +1579,7 @@ packages:
       next: 14.2.0-canary.65(@babel/core@7.24.8)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       tailwind-merge: 2.5.2
-      uploadthing: 6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.10)
+      uploadthing: 6.13.3(next@14.2.0-canary.65)(tailwindcss@3.4.10)
     transitivePeerDependencies:
       - solid-js
       - svelte
@@ -1591,6 +1591,14 @@ packages:
     dependencies:
       '@uploadthing/mime-types': 0.2.10
       effect: 3.4.5
+      std-env: 3.7.0
+    dev: false
+
+  /@uploadthing/shared@6.7.9:
+    resolution: {integrity: sha512-EsHkD31HLBHYB59ZbUVQg1pADtMNf+qjlKwniq+gxXsOOe5heD/zunJStjYWLhwB+C8+SaCPXvM7LiDmv5s/Vw==}
+    dependencies:
+      '@uploadthing/mime-types': 0.2.10
+      effect: 3.4.8
       std-env: 3.7.0
     dev: false
 
@@ -2132,6 +2140,10 @@ packages:
     resolution: {integrity: sha512-aTonOH68tUttSdYwMkiuky3hjgn3pu7yInNaE8rU2EDKQ8zr9Me78WcvWBQKe4u1gvbBH77y9dAKqn98lNIfNQ==}
     dev: false
 
+  /effect@3.4.8:
+    resolution: {integrity: sha512-qOQNrSSN3ITuAtARtN2Ldq6E5f42splY9VV18LqpKOXMwQCCEWkXdns4by3D2CJnDXQD2KCE0iGcRR2KowiQIA==}
+    dev: false
+
   /electron-to-chromium@1.4.827:
     resolution: {integrity: sha512-VY+J0e4SFcNfQy19MEoMdaIcZLmDCprqvBtkii1WTCTQHpRvf5N8+3kTYCgL/PcntvwQvmMJWTuDPsq+IlhWKQ==}
 
@@ -2596,8 +2608,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /fast-check@3.19.0:
-    resolution: {integrity: sha512-CO2JX/8/PT9bDGO1iXa5h5ey1skaKI1dvecERyhH4pp3PGjwd3KIjMAXEg79Ps9nclsdt4oPbfqiAnLU0EwrAQ==}
+  /fast-check@3.22.0:
+    resolution: {integrity: sha512-8HKz3qXqnHYp/VCNn2qfjHdAdcI8zcSqOyX64GOMukp7SL2bfzfeDKjSd+UyECtejccaZv3LcvZTm9YDD22iCQ==}
     engines: {node: '>=8.0.0'}
     dependencies:
       pure-rand: 6.1.0
@@ -4392,8 +4404,8 @@ packages:
       escalade: 3.1.2
       picocolors: 1.1.0
 
-  /uploadthing@6.13.2(next@14.2.0-canary.65)(tailwindcss@3.4.10):
-    resolution: {integrity: sha512-hrxwOgqKs8siczPloop72drRBiUYaFDHMp45OR/sSAaAbOPyGBmBL88Bi4UWCvgC+aBWCLRxtMEGeoqrfu+OMg==}
+  /uploadthing@6.13.3(next@14.2.0-canary.65)(tailwindcss@3.4.10):
+    resolution: {integrity: sha512-MkwKeuo0cVSJ9XHZgEW67qzCmk8QF1mDNf3cDnDC4v0g7o7mnCWgATyYsKSFURQPLnRvysddDxmsaekDOomXvw==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
       '@effect/platform': '*'
@@ -4416,11 +4428,11 @@ packages:
       tailwindcss:
         optional: true
     dependencies:
-      '@effect/schema': 0.68.12(effect@3.4.5)
+      '@effect/schema': 0.68.18(effect@3.4.8)
       '@uploadthing/mime-types': 0.2.10
-      '@uploadthing/shared': 6.7.8
+      '@uploadthing/shared': 6.7.9
       consola: 3.2.3
-      effect: 3.4.5
+      effect: 3.4.8
       next: 14.2.0-canary.65(@babel/core@7.24.8)(react-dom@18.3.1)(react@18.3.1)
       std-env: 3.7.0
       tailwindcss: 3.4.10
