@@ -39,8 +39,8 @@ dependencies:
     specifier: ^0.11.0
     version: 0.11.1(typescript@5.6.2)(zod@3.23.8)
   '@uploadthing/react':
-    specifier: ^6.4.1
-    version: 6.8.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3)
+    specifier: ^7.0.0
+    version: 7.0.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3)
   '@upstash/ratelimit':
     specifier: ^2.0.0
     version: 2.0.2
@@ -1563,22 +1563,24 @@ packages:
     resolution: {integrity: sha512-kz3F0oEgAyts25NAGXlUBCWh3mXonbSOQJFGFMawHuIgbUbnzXbe4w5WI+0XdneCbjNmikfWrdWrs8m/7HATfQ==}
     dev: false
 
-  /@uploadthing/react@6.8.0(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3):
-    resolution: {integrity: sha512-4GCYww4M2d8X8TQnNIW3mZYrCv9ichSMRLZa9KyH+PYuiBP74edyBJaCUFVK3jiWPXBUJFN0+If2Aviq7pY2VQ==}
+  /@uploadthing/mime-types@0.3.0:
+    resolution: {integrity: sha512-jN/XFvpKTzcd3MXT/9D9oxx05scnYiSYxAXF/e6hyg377zFducRxivU/kHyYTkpUZPTmOL5q9EQbOkUsXMlSMg==}
+    dev: false
+
+  /@uploadthing/react@7.0.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3):
+    resolution: {integrity: sha512-tGFmnPhrpzsFAikX0lo1r3gahU4CbvpiqjmaSZVfo/mngD3ZmQJxbmc1yf90fCBxs3OCFyVFARr0R9TI8yk9bw==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.13.3
+      uploadthing: 7.0.1
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.1(react@18.3.1)
-      '@uploadthing/shared': 6.7.9
-      file-selector: 0.6.0
+      '@uploadthing/shared': 7.0.1
       next: 14.2.0-canary.65(@babel/core@7.24.8)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
-      tailwind-merge: 2.5.2
       uploadthing: 6.13.3(next@14.2.0-canary.65)(tailwindcss@3.4.11)
     transitivePeerDependencies:
       - solid-js
@@ -1592,6 +1594,14 @@ packages:
       '@uploadthing/mime-types': 0.2.10
       effect: 3.4.8
       std-env: 3.7.0
+    dev: false
+
+  /@uploadthing/shared@7.0.1:
+    resolution: {integrity: sha512-NBRQpDu+2fdxk1uGXhHdKRnEjw9be5yKsTFqe4Xz39lUOLEswgTs+GgrlyBab3GpKqiBoqBYHiqPKXeaK6o/+g==}
+    dependencies:
+      '@uploadthing/mime-types': 0.3.0
+      effect: 3.7.2
+      sqids: 0.3.0
     dev: false
 
   /@upstash/core-analytics@0.0.10:
@@ -2130,6 +2140,10 @@ packages:
 
   /effect@3.4.8:
     resolution: {integrity: sha512-qOQNrSSN3ITuAtARtN2Ldq6E5f42splY9VV18LqpKOXMwQCCEWkXdns4by3D2CJnDXQD2KCE0iGcRR2KowiQIA==}
+    dev: false
+
+  /effect@3.7.2:
+    resolution: {integrity: sha512-pV7l1+LSZFvVObj4zuy4nYiBaC7qZOfrKV6s/Ef4p3KueiQwZFgamazklwyZ+x7Nyj2etRDFvHE/xkThTfQD1w==}
     dev: false
 
   /electron-to-chromium@1.4.827:
@@ -4042,6 +4056,10 @@ packages:
   /source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
+
+  /sqids@0.3.0:
+    resolution: {integrity: sha512-lOQK1ucVg+W6n3FhRwwSeUijxe93b51Bfz5PMRMihVf1iVkl82ePQG7V5vwrhzB11v0NtsR25PSZRGiSomJaJw==}
+    dev: false
 
   /std-env@3.7.0:
     resolution: {integrity: sha512-JPbdCEQLj1w5GilpiHAx3qJvFndqybBysA3qUOnznweH4QbNYUsW/ea8QzSrnh0vNsezMMw5bcVool8lM0gwzg==}
