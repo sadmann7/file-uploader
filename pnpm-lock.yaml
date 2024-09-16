@@ -40,7 +40,7 @@ dependencies:
     version: 0.11.1(typescript@5.6.2)(zod@3.23.8)
   '@uploadthing/react':
     specifier: ^7.0.0
-    version: 7.0.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3)
+    version: 7.0.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3)
   '@upstash/ratelimit':
     specifier: ^2.0.0
     version: 2.0.3
@@ -1564,18 +1564,18 @@ packages:
     resolution: {integrity: sha512-jN/XFvpKTzcd3MXT/9D9oxx05scnYiSYxAXF/e6hyg377zFducRxivU/kHyYTkpUZPTmOL5q9EQbOkUsXMlSMg==}
     dev: false
 
-  /@uploadthing/react@7.0.1(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3):
-    resolution: {integrity: sha512-tGFmnPhrpzsFAikX0lo1r3gahU4CbvpiqjmaSZVfo/mngD3ZmQJxbmc1yf90fCBxs3OCFyVFARr0R9TI8yk9bw==}
+  /@uploadthing/react@7.0.2(next@14.2.0-canary.65)(react@18.3.1)(uploadthing@6.13.3):
+    resolution: {integrity: sha512-343zTofWBo1yR+31/oP75WCTCC1lUuyAhfoqgJ0MEY64i15KoQAaTe3ICSNnXyeRaHCmJSQeK3hbEl44QGq/iQ==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 7.0.1
+      uploadthing: 7.0.2
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.4.1(react@18.3.1)
-      '@uploadthing/shared': 7.0.1
+      '@uploadthing/shared': 7.0.2
       next: 14.2.0-canary.65(@babel/core@7.24.8)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       uploadthing: 6.13.3(next@14.2.0-canary.65)(tailwindcss@3.4.11)
@@ -1593,8 +1593,8 @@ packages:
       std-env: 3.7.0
     dev: false
 
-  /@uploadthing/shared@7.0.1:
-    resolution: {integrity: sha512-NBRQpDu+2fdxk1uGXhHdKRnEjw9be5yKsTFqe4Xz39lUOLEswgTs+GgrlyBab3GpKqiBoqBYHiqPKXeaK6o/+g==}
+  /@uploadthing/shared@7.0.2:
+    resolution: {integrity: sha512-yhE7lA42m6g7Qw245Ey/8uK5J4d8FJhOg90VVt0PG1iJYvBZHbboSq1ndsGZ1X8jFaskBVORzWc66gEw43FEsQ==}
     dependencies:
       '@uploadthing/mime-types': 0.3.0
       effect: 3.7.2
