@@ -70,7 +70,7 @@ dependencies:
     version: 18.3.1(react@18.3.1)
   react-dropzone:
     specifier: ^14.2.3
-    version: 14.3.1(react@18.3.1)
+    version: 14.3.2(react@18.3.1)
   react-hook-form:
     specifier: ^7.51.2
     version: 7.53.1(react@18.3.1)
@@ -2587,8 +2587,8 @@ packages:
       tslib: 2.8.1
     dev: false
 
-  /file-selector@1.2.0:
-    resolution: {integrity: sha512-49855884Jfcij/ec+RGkUYmZo45CwBpN+gfxuOTiOGCBTwvr5p8ZpfBQo1n2sdJz8Pl6FCmNDxyltjptHVPFNQ==}
+  /file-selector@2.1.0:
+    resolution: {integrity: sha512-ZuXAqGePcSPz4JuerOY06Dzzq0hrmQ6VGoXVzGyFI1npeOfBgqGIKKpznfYWRkSLJlXutkqVC5WvGZtkFVhu9Q==}
     engines: {node: '>= 12'}
     dependencies:
       tslib: 2.8.1
@@ -3722,14 +3722,14 @@ packages:
       scheduler: 0.23.2
     dev: false
 
-  /react-dropzone@14.3.1(react@18.3.1):
-    resolution: {integrity: sha512-0Rq5g35SMcHneTPlKKBEpxh91N59XNhu5z2Xreoh1xB0EGTWUaS4ESS346qMLWQi9Y1T3SUU7JMKmB0/VaFggQ==}
+  /react-dropzone@14.3.2(react@18.3.1):
+    resolution: {integrity: sha512-SMfxMjU/lHm6iXHqpRTnYXSbngC08yz51W3NlqS+cBhXpR+orZacLuxO5MJ0gcF+9vV5/K91uniiTCzkmRgriA==}
     engines: {node: '>= 10.13'}
     peerDependencies:
       react: '>= 16.8 || 18.0.0'
     dependencies:
       attr-accept: 2.2.4
-      file-selector: 1.2.0
+      file-selector: 2.1.0
       prop-types: 15.8.1
       react: 18.3.1
     dev: false
