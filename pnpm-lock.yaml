@@ -70,7 +70,7 @@ dependencies:
     version: 18.3.1(react@18.3.1)
   react-dropzone:
     specifier: ^14.2.3
-    version: 14.3.3(react@18.3.1)
+    version: 14.3.5(react@18.3.1)
   react-hook-form:
     specifier: ^7.51.2
     version: 7.53.1(react@18.3.1)
@@ -3722,8 +3722,8 @@ packages:
       scheduler: 0.23.2
     dev: false
 
-  /react-dropzone@14.3.3(react@18.3.1):
-    resolution: {integrity: sha512-38yaWovqDqZdtn7LKTE5lFdqc57hYbPdS/oIxyhmaTP/yzC0yztPxnNy+poxew5HKF44gzGCNcNDBYjqlCXr6g==}
+  /react-dropzone@14.3.5(react@18.3.1):
+    resolution: {integrity: sha512-9nDUaEEpqZLOz5v5SUcFA0CjM4vq8YbqO0WRls+EYT7+DvxUdzDPKNCPLqGfj3YL9MsniCLCD4RFA6M95V6KMQ==}
     engines: {node: '>= 10.13'}
     peerDependencies:
       react: '>= 16.8 || 18.0.0'
