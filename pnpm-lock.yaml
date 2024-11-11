@@ -134,8 +134,8 @@ devDependencies:
     specifier: ^3.2.5
     version: 3.3.2
   prettier-plugin-tailwindcss:
-    specifier: ^0.5.13
-    version: 0.5.14(@ianvs/prettier-plugin-sort-imports@4.4.0)(prettier@3.3.2)
+    specifier: ^0.6.0
+    version: 0.6.8(@ianvs/prettier-plugin-sort-imports@4.4.0)(prettier@3.3.2)
   rimraf:
     specifier: ^6.0.0
     version: 6.0.1
@@ -3452,8 +3452,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.14(@ianvs/prettier-plugin-sort-imports@4.4.0)(prettier@3.3.2):
-    resolution: {integrity: sha512-Puaz+wPUAhFp8Lo9HuciYKM2Y2XExESjeT+9NQoVFXZsPPnc9VYss2SpxdQ6vbatmt8/4+SN0oe0I1cPDABg9Q==}
+  /prettier-plugin-tailwindcss@0.6.8(@ianvs/prettier-plugin-sort-imports@4.4.0)(prettier@3.3.2):
+    resolution: {integrity: sha512-dGu3kdm7SXPkiW4nzeWKCl3uoImdd5CTZEJGxyypEPL37Wj0HT2pLqjrvSei1nTeuQfO4PUfjeW5cTUNRLZ4sA==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -3467,6 +3467,7 @@ packages:
       prettier-plugin-import-sort: '*'
       prettier-plugin-jsdoc: '*'
       prettier-plugin-marko: '*'
+      prettier-plugin-multiline-arrays: '*'
       prettier-plugin-organize-attributes: '*'
       prettier-plugin-organize-imports: '*'
       prettier-plugin-sort-imports: '*'
@@ -3492,6 +3493,8 @@ packages:
       prettier-plugin-jsdoc:
         optional: true
       prettier-plugin-marko:
+        optional: true
+      prettier-plugin-multiline-arrays:
         optional: true
       prettier-plugin-organize-attributes:
         optional: true
