@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ReloadIcon } from "@radix-ui/react-icons"
+import { Loader } from "lucide-react"
 import { useFormStatus } from "react-dom"
 
 import { cn, composeEventHandlers } from "@/lib/utils"
@@ -35,7 +35,7 @@ const LoadingButton = React.forwardRef<HTMLButtonElement, LoadingButtonProps>(
         })}
       >
         {buttonAction === action && pending && (
-          <ReloadIcon className="mr-2 size-4 animate-spin" aria-hidden="true" />
+          <Loader className="mr-2 size-4 animate-spin" aria-hidden="true" />
         )}
 
         {children}

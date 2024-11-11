@@ -20,7 +20,9 @@ export function formatBytes(
   if (bytes === 0) return "0 Byte"
   const i = Math.floor(Math.log(bytes) / Math.log(1024))
   return `${(bytes / Math.pow(1024, i)).toFixed(decimals)} ${
-    sizeType === "accurate" ? accurateSizes[i] ?? "Bytes" : sizes[i] ?? "Bytes"
+    sizeType === "accurate"
+      ? (accurateSizes[i] ?? "Bytes")
+      : (sizes[i] ?? "Bytes")
   }`
 }
 

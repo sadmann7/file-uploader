@@ -12,7 +12,7 @@ export function BasicUploaderDemo() {
   )
 
   return (
-    <div className="space-y-6">
+    <div className="flex flex-col gap-6">
       <FileUploader
         maxFileCount={4}
         maxSize={4 * 1024 * 1024}

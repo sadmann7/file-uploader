@@ -25,6 +25,9 @@ const config = {
       "warn",
       {
         argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^err",
+        ignoreRestSiblings: true,
       },
     ],
     "@typescript-eslint/require-await": "off",
@@ -36,6 +39,7 @@ const config = {
         },
       },
     ],
+    "@typescript-eslint/no-empty-object-type": "off",
   },
   settings: {
     tailwindcss: {

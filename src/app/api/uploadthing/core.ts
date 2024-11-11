@@ -6,7 +6,7 @@ import { ratelimit } from "@/lib/rate-limit"
 const f = createUploadthing()
 
 // Fake auth function
-async function auth(req: Request) {
+async function auth(_req: Request) {
   await new Promise((resolve) => setTimeout(resolve, 100))
   return { id: "fakeId" }
 }
@@ -18,11 +18,12 @@ export const ourFileRouter = {
     // Set permissions and file types for this FileRoute
     .middleware(async ({ req }) => {
       // Rate limit the upload
-      const ip = req.ip ?? "127.0.0.1"
+      const ip = req.headers.get("x-forwarded-for") ?? "127.0.0.1"
 
       const { success } = await ratelimit.limit(ip)
 
       if (!success) {
+        // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw new UploadThingError("Rate limit exceeded")
       }
 
@@ -30,6 +31,7 @@ export const ourFileRouter = {
       const user = await auth(req)
 
       // If you throw, the user will not be able to upload
+      // eslint-disable-next-line @typescript-eslint/only-throw-error
       if (!user) throw new UploadThingError("Unauthorized")
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
