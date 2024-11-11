@@ -8,7 +8,9 @@ import { UploadedFilesCard } from "./uploaded-files-card"
 export function BasicUploaderDemo() {
   const { onUpload, progresses, uploadedFiles, isUploading } = useUploadFile(
     "imageUploader",
-    { defaultUploadedFiles: [] }
+    {
+      defaultUploadedFiles: [],
+    }
   )
 
   return (
