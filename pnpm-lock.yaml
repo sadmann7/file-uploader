@@ -86,10 +86,10 @@ dependencies:
     version: 2.5.4
   tailwindcss-animate:
     specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@3.4.14)
+    version: 1.0.7(tailwindcss@3.4.15)
   uploadthing:
     specifier: ^7.3.0
-    version: 7.3.0(next@15.0.3)(tailwindcss@3.4.14)
+    version: 7.3.0(next@15.0.3)(tailwindcss@3.4.15)
   zod:
     specifier: ^3.23.8
     version: 3.23.8
@@ -130,7 +130,7 @@ devDependencies:
     version: 9.1.0(eslint@8.57.0)
   eslint-plugin-tailwindcss:
     specifier: ^3.17.5
-    version: 3.17.5(tailwindcss@3.4.14)
+    version: 3.17.5(tailwindcss@3.4.15)
   postcss:
     specifier: ^8.4.48
     version: 8.4.49
@@ -145,7 +145,7 @@ devDependencies:
     version: 6.0.1
   tailwindcss:
     specifier: ^3.4.14
-    version: 3.4.14
+    version: 3.4.15
   typescript:
     specifier: ^5.6.3
     version: 5.6.3
@@ -1545,7 +1545,7 @@ packages:
       file-selector: 0.6.0
       next: 15.0.3(react-dom@19.0.0-rc-fb9a90fa48-20240614)(react@19.0.0-rc-fb9a90fa48-20240614)
       react: 19.0.0-rc-fb9a90fa48-20240614
-      uploadthing: 7.3.0(next@15.0.3)(tailwindcss@3.4.14)
+      uploadthing: 7.3.0(next@15.0.3)(tailwindcss@3.4.15)
     dev: false
 
   /@uploadthing/shared@7.1.1:
@@ -2369,7 +2369,7 @@ packages:
       string.prototype.repeat: 1.0.0
     dev: true
 
-  /eslint-plugin-tailwindcss@3.17.5(tailwindcss@3.4.14):
+  /eslint-plugin-tailwindcss@3.17.5(tailwindcss@3.4.15):
     resolution: {integrity: sha512-8Mi7p7dm+mO1dHgRHHFdPu4RDTBk69Cn4P0B40vRQR+MrguUpwmKwhZy1kqYe3Km8/4nb+cyrCF+5SodOEmaow==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
@@ -2377,7 +2377,7 @@ packages:
     dependencies:
       fast-glob: 3.3.2
       postcss: 8.4.49
-      tailwindcss: 3.4.14
+      tailwindcss: 3.4.15
     dev: true
 
   /eslint-scope@7.2.2:
@@ -4053,16 +4053,16 @@ packages:
     resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@3.4.14):
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.15):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.4.14
+      tailwindcss: 3.4.15
     dev: false
 
-  /tailwindcss@3.4.14:
-    resolution: {integrity: sha512-IcSvOcTRcUtQQ7ILQL5quRDg7Xs93PdJEk1ZLbhhvJc7uj/OAhYOnruEiwnGgBvUtaUAJ8/mhSw1o8L2jCiENA==}
+  /tailwindcss@3.4.15:
+    resolution: {integrity: sha512-r4MeXnfBmSOuKUWmXe6h2CcyfzJCEk4F0pptO5jlnYSIViUkVmsawj80N5h2lO3gwcmSb4n3PuN+e+GC1Guylw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4226,7 +4226,7 @@ packages:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
     dev: true
 
-  /uploadthing@7.3.0(next@15.0.3)(tailwindcss@3.4.14):
+  /uploadthing@7.3.0(next@15.0.3)(tailwindcss@3.4.15):
     resolution: {integrity: sha512-ALZCOI5m5XyDD9YHCewCrhLFnELeI8xRJfJC4PvGdh9u6PcAyv851UT92JC6BLtJdgB2Fi/o9gPOXMpZkD5pSw==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
@@ -4252,7 +4252,7 @@ packages:
       '@uploadthing/shared': 7.1.1
       effect: 3.10.3
       next: 15.0.3(react-dom@19.0.0-rc-fb9a90fa48-20240614)(react@19.0.0-rc-fb9a90fa48-20240614)
-      tailwindcss: 3.4.14
+      tailwindcss: 3.4.15
     dev: false
 
   /uri-js@4.4.1:
