@@ -11,7 +11,7 @@ overrides:
 dependencies:
   '@hookform/resolvers':
     specifier: ^3.9.1
-    version: 3.9.1(react-hook-form@7.53.2)
+    version: 3.9.1(react-hook-form@7.54.0)
   '@radix-ui/react-dialog':
     specifier: ^1.1.2
     version: 1.1.2(react-dom@19.0.0)(react@19.0.0)(types-react-dom@19.0.0)(types-react@19.0.0-rc.1)
@@ -77,7 +77,7 @@ dependencies:
     version: 14.3.5(react@19.0.0)
   react-hook-form:
     specifier: ^7.53.2
-    version: 7.53.2(react@19.0.0)
+    version: 7.54.0(react@19.0.0)
   sonner:
     specifier: ^1.7.0
     version: 1.7.0(react-dom@19.0.0)(react@19.0.0)
@@ -309,12 +309,12 @@ packages:
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
     dev: false
 
-  /@hookform/resolvers@3.9.1(react-hook-form@7.53.2):
+  /@hookform/resolvers@3.9.1(react-hook-form@7.54.0):
     resolution: {integrity: sha512-ud2HqmGBM0P0IABqoskKWI6PEf6ZDDBZkFqe2Vnl+mTHCEHzr3ISjjZyCwTjC/qpL25JC9aIDkloQejvMeq0ug==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.53.2(react@19.0.0)
+      react-hook-form: 7.54.0(react@19.0.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -3630,8 +3630,8 @@ packages:
       react: 19.0.0
     dev: false
 
-  /react-hook-form@7.53.2(react@19.0.0):
-    resolution: {integrity: sha512-YVel6fW5sOeedd1524pltpHX+jgU2u3DSDtXEaBORNdqiNrsX/nUI/iGXONegttg0mJVnfrIkiV0cmTU6Oo2xw==}
+  /react-hook-form@7.54.0(react@19.0.0):
+    resolution: {integrity: sha512-PS05+UQy/IdSbJNojBypxAo9wllhHgGmyr8/dyGQcPoiMf3e7Dfb9PWYVRco55bLbxH9S+1yDDJeTdlYCSxO3A==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
