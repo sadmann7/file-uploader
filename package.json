@@ -57,7 +57,7 @@
     "@typescript-eslint/parser": "^8.13.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "15.0.4",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "postcss": "^8.4.48",
     "prettier": "^3.3.3",
