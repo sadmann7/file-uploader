@@ -41,7 +41,7 @@ dependencies:
     version: 0.12.0(typescript@5.7.3)(zod@3.24.2)
   '@uploadthing/react':
     specifier: ^7.1.1
-    version: 7.2.1(next@15.0.4)(react@19.0.0)(uploadthing@7.5.1)
+    version: 7.2.1(next@15.0.4)(react@19.0.0)(uploadthing@7.5.2)
   '@upstash/ratelimit':
     specifier: ^2.0.4
     version: 2.0.5(@upstash/redis@1.34.4)
@@ -89,7 +89,7 @@ dependencies:
     version: 1.0.7(tailwindcss@3.4.17)
   uploadthing:
     specifier: ^7.3.0
-    version: 7.5.1(next@15.0.4)(tailwindcss@3.4.17)
+    version: 7.5.2(next@15.0.4)(tailwindcss@3.4.17)
   zod:
     specifier: ^3.23.8
     version: 3.24.2
@@ -1523,7 +1523,7 @@ packages:
     resolution: {integrity: sha512-EB0o0a4y++UJFMLqS8LDVhSQgXUllG6t5fwl5cbmOM0Uay8YY5Nc/JjFwzJ8wccdIKz4oYwQW7EOSfUyaMPbfw==}
     dev: false
 
-  /@uploadthing/react@7.2.1(next@15.0.4)(react@19.0.0)(uploadthing@7.5.1):
+  /@uploadthing/react@7.2.1(next@15.0.4)(react@19.0.0)(uploadthing@7.5.2):
     resolution: {integrity: sha512-X8iUJDOFyT9DonfZkxx3ngWvr4iz47tmXT7pC0209YT+Odfmq/sd/a0w7UcFrCiYIV1CL0xD97ynRDTN3LX48Q==}
     peerDependencies:
       next: '*'
@@ -1537,11 +1537,19 @@ packages:
       file-selector: 0.6.0
       next: 15.0.4(react-dom@19.0.0)(react@19.0.0)
       react: 19.0.0
-      uploadthing: 7.5.1(next@15.0.4)(tailwindcss@3.4.17)
+      uploadthing: 7.5.2(next@15.0.4)(tailwindcss@3.4.17)
     dev: false
 
   /@uploadthing/shared@7.1.6:
     resolution: {integrity: sha512-7EyTxaGiTIdyqCwNQFryo0LR4eZgyClq31igrjGrXHkxSlXnurphybjzB6AVD73UBPVGCfbtOK0lloduhsMNlg==}
+    dependencies:
+      '@uploadthing/mime-types': 0.3.4
+      effect: 3.12.0
+      sqids: 0.3.0
+    dev: false
+
+  /@uploadthing/shared@7.1.7:
+    resolution: {integrity: sha512-VDvGmyHhdwaivC+eee77yZnOVvz59mOmLVbcuYFo4SkoNvPuc3AyPORqJJMBveQivTvELdrQcjlx6IPv98JkSA==}
     dependencies:
       '@uploadthing/mime-types': 0.3.4
       effect: 3.12.0
@@ -4268,8 +4276,8 @@ packages:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
     dev: true
 
-  /uploadthing@7.5.1(next@15.0.4)(tailwindcss@3.4.17):
-    resolution: {integrity: sha512-p5VxxT4i7LYLiKE+FgtMnIztvDfgZ1IptY62PF2YpgvxFccIbX/OXx8OcW/psjKCmPC7PXEt3e9d+bduYJOmDw==}
+  /uploadthing@7.5.2(next@15.0.4)(tailwindcss@3.4.17):
+    resolution: {integrity: sha512-hrvsVXgu6cYYJW97UuFLd3U2+TrPGyMBtPYSkqSTVq45Orkq9qFk095qkXYIW4EA/DyvCo78VV25HfSXT3EH7w==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
       express: '*'
@@ -4292,7 +4300,7 @@ packages:
       '@effect/platform': 0.72.0(effect@3.12.0)
       '@standard-schema/spec': 1.0.0-beta.4
       '@uploadthing/mime-types': 0.3.4
-      '@uploadthing/shared': 7.1.6
+      '@uploadthing/shared': 7.1.7
       effect: 3.12.0
       next: 15.0.4(react-dom@19.0.0)(react@19.0.0)
       tailwindcss: 3.4.17
