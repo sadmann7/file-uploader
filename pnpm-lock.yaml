@@ -11,7 +11,7 @@ overrides:
 dependencies:
   '@hookform/resolvers':
     specifier: ^4.0.0
-    version: 4.1.1(react-hook-form@7.54.2)
+    version: 4.1.2(react-hook-form@7.54.2)
   '@radix-ui/react-dialog':
     specifier: ^1.1.2
     version: 1.1.6(react-dom@19.0.0)(react@19.0.0)(types-react-dom@19.0.0)(types-react@19.0.0-rc.1)
@@ -309,12 +309,12 @@ packages:
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
     dev: false
 
-  /@hookform/resolvers@4.1.1(react-hook-form@7.54.2):
-    resolution: {integrity: sha512-S9YN1RgNWG+klUz5uQaV6rjE4pr6Py2tamj7ekshzLcMyg+/Pal1KZAYgGszV0+doiy41dUiQgXL3uRS9stndQ==}
+  /@hookform/resolvers@4.1.2(react-hook-form@7.54.2):
+    resolution: {integrity: sha512-wl6H9c9wLOZMJAqGLEVKzbCkxJuV+BYuLFZFCQtCwMe0b3qQk4kUBd/ZAj13SwcSqcx86rCgSCyngQfmA6DOWg==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      caniuse-lite: 1.0.30001700
+      '@standard-schema/utils': 0.3.0
       react-hook-form: 7.54.2(react@19.0.0)
     dev: false
 
@@ -1323,6 +1323,10 @@ packages:
     resolution: {integrity: sha512-d3IxtzLo7P1oZ8s8YNvxzBUXRXojSut8pbPrTYtzsc5sn4+53jVqbk66pQerSZbZSJZQux6LkclB/+8IDordHg==}
     dev: false
 
+  /@standard-schema/utils@0.3.0:
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
+    dev: false
+
   /@swc/counter@0.1.3:
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
     dev: false
@@ -1809,10 +1813,6 @@ packages:
 
   /caniuse-lite@1.0.30001680:
     resolution: {integrity: sha512-rPQy70G6AGUMnbwS1z6Xg+RkHYPAi18ihs47GH0jcxIG7wArmPgY3XbS2sRdBbxJljp3thdT8BIqv9ccCypiPA==}
-    dev: false
-
-  /caniuse-lite@1.0.30001700:
-    resolution: {integrity: sha512-2S6XIXwaE7K7erT8dY+kLQcpa5ms63XlRkMkReXjle+kf6c5g38vyMl+Z5y8dSxOFDhcFe+nxnn261PLxBSQsQ==}
     dev: false
 
   /chalk@4.1.2:
