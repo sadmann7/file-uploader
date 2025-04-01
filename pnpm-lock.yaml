@@ -80,7 +80,7 @@ dependencies:
     version: 7.55.0(react@19.1.0)
   sonner:
     specifier: ^2.0.0
-    version: 2.0.2(react-dom@19.1.0)(react@19.1.0)
+    version: 2.0.3(react-dom@19.1.0)(react@19.1.0)
   tailwind-merge:
     specifier: ^3.0.0
     version: 3.1.0
@@ -3938,8 +3938,8 @@ packages:
     dev: false
     optional: true
 
-  /sonner@2.0.2(react-dom@19.1.0)(react@19.1.0):
-    resolution: {integrity: sha512-xOeXErZ4blqQd11ZnlDmoRmg+ctUJBkTU8H+HVh9rnWi9Ke28xiL39r4iCTeDX31ODTe/s1MaiaY333dUzLCtA==}
+  /sonner@2.0.3(react-dom@19.1.0)(react@19.1.0):
+    resolution: {integrity: sha512-njQ4Hht92m0sMqqHVDL32V2Oun9W1+PHO9NDv9FHfJjT3JT22IG4Jpo3FPQy+mouRKCXFWO+r67v6MrHX2zeIA==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
