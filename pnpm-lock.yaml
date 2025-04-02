@@ -11,7 +11,7 @@ overrides:
 dependencies:
   '@hookform/resolvers':
     specifier: ^5.0.0
-    version: 5.0.0(react-hook-form@7.55.0)
+    version: 5.0.1(react-hook-form@7.55.0)
   '@radix-ui/react-dialog':
     specifier: ^1.1.2
     version: 1.1.6(react-dom@19.1.0)(react@19.1.0)(types-react-dom@19.0.0)(types-react@19.0.0-rc.1)
@@ -319,10 +319,10 @@ packages:
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
     dev: false
 
-  /@hookform/resolvers@5.0.0(react-hook-form@7.55.0):
-    resolution: {integrity: sha512-3w/nL/GcafcBnehyvOGzrhFACAQoLAEVzJjRJrBpedEiD+dPvu/K+UL51wVOB4toZq8p6UkTfkd4aoAW+LOpRQ==}
+  /@hookform/resolvers@5.0.1(react-hook-form@7.55.0):
+    resolution: {integrity: sha512-u/+Jp83luQNx9AdyW2fIPGY6Y7NG68eN2ZW8FOJYL+M0i4s49+refdJdOp/A9n9HFQtQs3HIDHQvX3ZET2o7YA==}
     peerDependencies:
-      react-hook-form: 7.55.0
+      react-hook-form: ^7.55.0
     dependencies:
       '@standard-schema/utils': 0.3.0
       react-hook-form: 7.55.0(react@19.1.0)
