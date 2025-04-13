@@ -138,7 +138,7 @@ export function FileUploadUploadThingDemo() {
       </FileUpload>
       {uploadFiles.length > 0 ? (
         <div className="flex flex-col gap-4">
-          <p className="font-medium text-sm">Uploaded files:</p>
+          <p className="font-medium text-sm">Uploaded files</p>
           <div className="flex items-center gap-2 overflow-x-auto">
             {uploadedFiles.map((file) => (
               <div key={file.key} className="relative size-20">
