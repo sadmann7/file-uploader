@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "react",
     "uploader",
     "file-uploader",
+    "file-upload",
     "file-input",
     "shadcn-file-uploader",
     "uploadthing",

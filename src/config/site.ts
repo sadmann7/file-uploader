@@ -4,7 +4,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "File upload",
-  description: "File upload component built with shadcn/ui, and Radix UI",
+  description: "File upload component built with shadcn/ui, and Radix UI.",
   url:
     env.NODE_ENV === "development"
       ? "http://localhost:3000"
