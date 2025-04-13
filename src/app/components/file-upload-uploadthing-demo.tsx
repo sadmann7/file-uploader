@@ -49,7 +49,11 @@ export function FileUploadUploadThingDemo() {
             <pre className="mt-2 w-80 rounded-md bg-accent/30 p-4 text-accent-foreground">
               <code>
                 {JSON.stringify(
-                  res.map((file) => file.name),
+                  res.map((file) =>
+                    file.name.length > 25
+                      ? `${file.name.slice(0, 25)}...`
+                      : file.name,
+                  ),
                   null,
                   2,
                 )}
@@ -137,14 +141,15 @@ export function FileUploadUploadThingDemo() {
           <p className="font-medium text-sm">Uploaded files:</p>
           <div className="flex items-center gap-2 overflow-x-auto">
             {uploadedFiles.map((file) => (
-              <Image
-                key={file.key}
-                src={file.ufsUrl}
-                alt={file.name}
-                width={100}
-                height={100}
-                className="rounded-md object-cover"
-              />
+              <div key={file.key} className="relative size-20">
+                <Image
+                  src={file.ufsUrl}
+                  alt={file.name}
+                  fill
+                  sizes="100px"
+                  className="aspect-square rounded-md object-cover"
+                />
+              </div>
             ))}
           </div>
         </div>
