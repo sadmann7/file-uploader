@@ -1,31 +1,31 @@
-import Link from "next/link"
-import { File } from "lucide-react"
+import { File } from "lucide-react";
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site"
-import { Button } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
-import { ModeToggle } from "@/components/layouts/mode-toggle"
+import { Icons } from "@/components/icons";
+import { ModeToggle } from "@/components/layouts/mode-toggle";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        <Link href="/" className="mr-2 flex items-center md:mr-6 md:space-x-2">
+    <header className="sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60">
+      <div className="container flex h-14 items-center gap-6">
+        <Link href="/" className="flex items-center gap-2">
           <File className="size-4" aria-hidden="true" />
           <span className="hidden font-bold md:inline-block">
             {siteConfig.name}
           </span>
         </Link>
-        {/* <nav className="flex w-full items-center gap-6 text-sm">
+        <nav className="flex flex-1 items-center gap-6 text-sm">
           <Link
-            href="https://www.sadmn.com/blog/shadcn-table"
+            href={siteConfig.links.docs}
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground/60 transition-colors hover:text-foreground"
           >
             Docs
           </Link>
-        </nav> */}
+        </nav>
         <nav className="flex flex-1 items-center md:justify-end">
           <Button variant="ghost" size="icon" className="size-8" asChild>
             <Link
@@ -34,12 +34,12 @@ export function SiteHeader() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icons.gitHub className="size-4" aria-hidden="true" />
+              <Icons.gitHub className="size-4" />
             </Link>
           </Button>
           <ModeToggle />
         </nav>
       </div>
     </header>
-  )
+  );
 }
