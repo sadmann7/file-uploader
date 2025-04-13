@@ -17,9 +17,7 @@ export default function IndexPage() {
       <Card>
         <CardHeader>
           <CardTitle>Basic</CardTitle>
-          <CardDescription>
-            Simple file upload component for server uploads.
-          </CardDescription>
+          <CardDescription>Basic controlled file upload.</CardDescription>
         </CardHeader>
         <CardContent>
           <FileUploadDemo />
