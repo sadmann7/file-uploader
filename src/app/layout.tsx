@@ -54,7 +54,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
 export const viewport: Viewport = {
@@ -73,7 +72,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           GeistSans.variable,
-          GeistMono.variable,
+          GeistMono.variable
         )}
       >
         <ThemeProvider
