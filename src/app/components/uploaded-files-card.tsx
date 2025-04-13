@@ -1,18 +1,18 @@
-import Image from "next/image"
-import type { UploadedFile } from "@/types"
+import type { UploadedFile } from "@/types";
+import Image from "next/image";
 
+import { EmptyCard } from "@/components/empty-card";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { EmptyCard } from "@/components/empty-card"
+} from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 interface UploadedFilesCardProps {
-  uploadedFiles: UploadedFile[]
+  uploadedFiles: UploadedFile[];
 }
 
 export function UploadedFilesCard({ uploadedFiles }: UploadedFilesCardProps) {
@@ -50,5 +50,5 @@ export function UploadedFilesCard({ uploadedFiles }: UploadedFilesCardProps) {
         )}
       </CardContent>
     </Card>
-  )
+  );
 }
