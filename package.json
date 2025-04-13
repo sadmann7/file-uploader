@@ -47,21 +47,12 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
-    "@total-typescript/ts-reset": "^0.6.1",
-    "@types/eslint": "^8.56.10",
     "@types/node": "^22.9.0",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.13.0",
-    "@typescript-eslint/parser": "^8.13.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "15.0.4",
-    "eslint-config-prettier": "^10.0.0",
-    "eslint-plugin-tailwindcss": "^3.17.5",
     "postcss": "^8.4.48",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8",
     "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3"
@@ -69,11 +60,5 @@
   "ct3aMetadata": {
     "initVersion": "7.30.0"
   },
-  "packageManager": "pnpm@8.15.9",
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.1",
-      "@types/react-dom": "npm:types-react-dom@19.0.0"
-    }
-  }
+  "packageManager": "pnpm@10.8.0"
 }
